@@ -1,1 +1,7 @@
-export const Layout = () => <div>1</div>;
+import styles from './layout.module.css';
+
+export const Layout = () => (
+  <div className={styles.wrapper}>
+    <div className={styles.container} />
+  </div>
+);
