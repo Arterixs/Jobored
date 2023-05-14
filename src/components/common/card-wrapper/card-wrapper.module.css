@@ -1,0 +1,16 @@
+.wrapper {
+  background-color: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+}
+
+.filter {
+  padding: 20px;
+  width: 315px;
+}
+
+.card {
+  padding: 24px;
+  max-width: 773px;
+  width: 100%;
+}

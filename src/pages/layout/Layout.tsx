@@ -7,9 +7,9 @@ import styles from './layout.module.css';
 export const Layout = () => (
   <div className={styles.wrapper}>
     <Header />
-    <main>
+    <div className={styles.container}>
       <Outlet />
-    </main>
+    </div>
     <Footer />
     <Sprite />
   </div>
