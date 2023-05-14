@@ -1,0 +1,13 @@
+.ul {
+  display: flex;
+  gap: 60px;
+}
+
+.list {
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  line-height: 20px;
+}
