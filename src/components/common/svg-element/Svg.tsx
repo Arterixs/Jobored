@@ -1,4 +1,4 @@
-import { SvgProps } from '../../../types/types/props';
+import { SvgProps } from 'types/types/props';
 import styles from './svg.module.css';
 
 export const Svg = ({ id }: SvgProps) => (

@@ -1,5 +1,5 @@
-import { CardWrapper } from '../../components/common/card-wrapper/Card-wrapper';
-import { CardWrapClasses } from '../../types/enums/classes';
+import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
+import { CardWrapClasses } from 'types/enums/classes';
 import styles from './vacancy.module.css';
 
 export const Vacancy = () => (

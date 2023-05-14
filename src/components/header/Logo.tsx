@@ -1,4 +1,4 @@
-import { SvgId } from '../../types/enums/svg';
+import { SvgId } from 'types/enums/svg';
 import { Svg } from '../common/svg-element/Svg';
 import styles from './logo.module.css';
 

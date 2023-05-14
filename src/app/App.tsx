@@ -1,7 +1,7 @@
+import { Layout } from 'pages/layout/Layout';
+import { Vacancy } from 'pages/vacancy/Vacancy';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Layout } from '../pages/layout/Layout';
-import { Vacancy } from '../pages/vacancy/Vacancy';
-import { Routers } from '../types/enums/router';
+import { Routers } from 'types/enums/router';
 
 export const App = () => (
   <Routes>
