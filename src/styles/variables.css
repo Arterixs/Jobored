@@ -1,4 +1,4 @@
-.root {
+:root {
   --white: #ffffff;
   --black: #232134;
   --grey: #f7f7f8;
@@ -13,4 +13,10 @@
   --blue-400: #92c1ff;
   --blue-500-main: #5e96fc;
   --blue-600: #5e96fc;
+
+  --font-regular: 'Inter-regular', sans-serif;
+  --font-medium: 'Inter-medium', sans-serif;
+  --font-semiBold: 'Inter-semiBold', sans-serif;
+  --font-bold: 'Inter-bold', sans-serif;
+  --font-title: 'Poppins-semiBold', sans-serif;
 }
