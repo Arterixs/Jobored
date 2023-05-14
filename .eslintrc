@@ -2,6 +2,7 @@
   "extends": [
     "react-app",
     "airbnb",
+    "airbnb-typescript",
     "plugin:jsx-a11y/recommended",
     "plugin:react/jsx-runtime",
     "plugin:import/recommended",
@@ -9,6 +10,22 @@
   ],
   "plugins": ["react", "import", "jsx-a11y", "prettier"],
   "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      },
+      "rules": {
+        "import/no-default-export": "off",
+        "react/prefer-stateless-function": "off"
+      }
+    }
+  ],
   "settings": {
     "import/resolver": {
       "node": {

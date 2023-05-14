@@ -1,5 +1,5 @@
 import { LogoWrapper } from './Logo';
-import { Nav } from './Nav';
+import { Nav } from '../navigation/Nav';
 import styles from './header.module.css';
 
 export const Header = () => (
