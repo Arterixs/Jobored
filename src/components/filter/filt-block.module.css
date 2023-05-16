@@ -9,3 +9,7 @@
   line-height: 19.36px;
   font-family: var(--font-bold);
 }
+
+.wrap {
+  position: relative;
+}

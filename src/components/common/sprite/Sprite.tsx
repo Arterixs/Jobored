@@ -15,6 +15,22 @@ export const Sprite = () => (
         <line x1='11.7425' y1='4.44219' x2='4.44197' y2='11.7427' stroke='CurrentColor' strokeWidth='1.25' />
         <line x1='11.9013' y1='11.7425' x2='4.60082' y2='4.44197' stroke='CurrentColor' strokeWidth='1.25' />
       </symbol>
+      <symbol viewBox='0 0 12 12' id='arrowNumUp'>
+        <path
+          d='M9.50006 7.5L6.39054 4.83469C6.16584 4.6421 5.83428 4.6421 5.60959 4.83469L2.50006 7.5'
+          stroke='CurrentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+        />
+      </symbol>
+      <symbol viewBox='0 0 12 12' id='arrowNumDown'>
+        <path
+          d='M2.49994 4.5L5.60946 7.16531C5.83416 7.3579 6.16572 7.3579 6.39041 7.16531L9.49994 4.5'
+          stroke='CurrentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+        />
+      </symbol>
     </svg>
   </div>
 );

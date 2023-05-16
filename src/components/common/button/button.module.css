@@ -5,6 +5,7 @@
   font-size: 14px;
   line-height: 21px;
   font-family: var(--font-medium);
+  background-color: transparent;
 }
 
 .btn_reset {
@@ -15,6 +16,8 @@
   color: var(--grey-500);
 }
 
+.btn_arrow-num:hover,
+.btn_arrow-num:focus-visible,
 .btn_reset:focus-visible,
 .btn_reset:focus-visible + svg,
 .btn_reset:hover + svg,
@@ -24,6 +27,7 @@
   color: var(--blue-400);
 }
 
+.btn_arrow-num:active,
 .btn_reset:active + svg,
 .btn_reset:active {
   transition: all 0.3s ease;
@@ -49,4 +53,12 @@
 .btn_apply:active {
   transition: all 0.3s ease;
   background-color: var(--blue-600);
+}
+
+.btn_arrow-num {
+  text-align: center;
+  width: 12px;
+  height: 12px;
+  color: var(--grey-500);
+  display: flex;
 }

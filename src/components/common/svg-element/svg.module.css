@@ -12,3 +12,9 @@
   pointer-events: none;
   color: var(--grey-500);
 }
+
+.arrow_num {
+  width: 12px;
+  height: 12px;
+  fill: none;
+}
