@@ -41,6 +41,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": [1, { "html": "ignore" }],
     "import/extensions": [
       "error",
       "ignorePackages",
