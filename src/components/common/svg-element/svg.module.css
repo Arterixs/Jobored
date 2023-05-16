@@ -4,6 +4,11 @@
 }
 
 .close {
+  position: absolute;
   width: 16px;
   height: 16px;
+  top: 2px;
+  right: 0;
+  pointer-events: none;
+  color: var(--grey-500);
 }

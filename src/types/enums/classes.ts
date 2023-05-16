@@ -16,4 +16,5 @@ export const enum SvgClasses {
 export const enum InputClasses {
   NUMBER = 'number',
   TEXT = 'text',
+  FILTER = 'filter',
 }

@@ -2,7 +2,58 @@
 }
 
 .btn_reset {
+  width: inherit;
+  height: inherit;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--grey-500);
+  font-size: 14px;
+  line-height: 20px;
+  font-family: var(--font-medium);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.btn_reset:focus-visible,
+.btn_reset:focus-visible + svg,
+.btn_reset:hover + svg,
+.btn_reset:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--blue-400);
+}
+
+.btn_reset:active + svg,
+.btn_reset:active {
+  transition: all 0.3s ease;
+  color: var(--blue-500-main);
 }
 
 .btn_apply {
+  text-align: center;
+  width: inherit;
+  height: 40px;
+  background-color: var(--blue-500-main);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 21px;
+  font-family: var(--font-medium);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn_reset:focus-visible,
+.btn_apply:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--blue-400);
+}
+
+.btn_apply:active {
+  transition: all 0.3s ease;
+  background-color: var(--blue-600);
 }

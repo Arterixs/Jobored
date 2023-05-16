@@ -15,4 +15,5 @@ body {
 #root {
   height: inherit;
   font-family: var(--font-regular);
+  color: var(--black);
 }
