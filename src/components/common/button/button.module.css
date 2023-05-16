@@ -1,20 +1,18 @@
 .btn {
+  border: none;
+  transition: all 0.3s ease;
+  outline: none;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: var(--font-medium);
 }
 
 .btn_reset {
   width: inherit;
   height: inherit;
   background-color: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  text-align: start;
   color: var(--grey-500);
-  font-size: 14px;
-  line-height: 20px;
-  font-family: var(--font-medium);
-  transition: all 0.3s ease;
-  outline: none;
 }
 
 .btn_reset:focus-visible,
@@ -39,14 +37,9 @@
   background-color: var(--blue-500-main);
   border-radius: 8px;
   color: var(--white);
-  font-size: 14px;
-  line-height: 21px;
-  font-family: var(--font-medium);
-  border: none;
-  transition: all 0.3s ease;
 }
 
-.btn_reset:focus-visible,
+.btn_apply:focus-visible,
 .btn_apply:hover {
   cursor: pointer;
   transition: all 0.3s ease;
