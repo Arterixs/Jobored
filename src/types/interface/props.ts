@@ -20,3 +20,7 @@ export interface InputProps {
   value?: string;
   placeholder?: string;
 }
+
+export interface FilterProps {
+  setDataFilter: (job: string, salaryFr: string, salaryUp: string) => void;
+}
