@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useRef, useState } from 'react';
 import { Button } from 'components/common/button/Button';
 import { Svg } from 'components/common/svg-element/Svg';
 import { clickNumArrow } from 'utils/helpers/filter';
@@ -12,19 +12,23 @@ import { SvgId } from 'types/enums/svg';
 import { FiltBlock } from './Filt-block';
 import styles from './filter.module.css';
 
-export const Filter = ({ setDataFilter }: FilterProps) => {
+export const Filter = memo(({ setDataFilter }: FilterProps) => {
   const [valueJob, setValueJob] = useState('');
   const [salaryFr, setSalaryFr] = useState('');
   const [salaryUp, setSalaryUp] = useState('');
+  const refOption = useRef(-1);
   const changeFr = (e: React.ChangeEvent<HTMLInputElement>) => setSalaryFr(e.target.value);
   const changeUp = (e: React.ChangeEvent<HTMLInputElement>) => setSalaryUp(e.target.value);
   const reset = () => {
+    refOption.current = -1;
     setValueJob('');
     setSalaryFr('');
     setSalaryUp('');
   };
   const choiseOption = (value: string) => setValueJob(value);
   const applyClick = () => setDataFilter(valueJob, salaryFr, salaryUp);
+  console.log('render filter');
+
   return (
     <section className={styles.filter}>
       <section className={styles['wrapper-reset']}>
@@ -38,13 +42,7 @@ export const Filter = ({ setDataFilter }: FilterProps) => {
       </section>
       <div className={styles['wrapper-input']}>
         <FiltBlock title={FilterText.INDUSTRY}>
-          <Dropdown
-            className={DropdownClasses.FILTER}
-            classNameOptions={DropdownClasses.FILTER}
-            value={valueJob}
-            func={choiseOption}
-          />
-          {/* <Input type='text' className={InputClasses.FILTER} /> */}
+          <Dropdown className={DropdownClasses.FILTER} value={valueJob} func={choiseOption} activeOption={refOption} />
         </FiltBlock>
         <FiltBlock title={FilterText.SALARY}>
           <Wrapper>
@@ -88,4 +86,4 @@ export const Filter = ({ setDataFilter }: FilterProps) => {
       </div>
     </section>
   );
-};
+});

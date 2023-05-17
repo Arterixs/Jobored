@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { StateVacFilter } from 'types/interface/states';
 import { Filter } from 'components/filter/Filter';
@@ -11,13 +11,14 @@ export const Vacancy = () => {
     salaryFr: '',
     salaryUp: '',
   });
-  const setDataFilter = (job: string, salaryFr: string, salaryUp: string) => {
+  const setDataFilter = useCallback((job: string, salaryFr: string, salaryUp: string) => {
     setValue({
       job,
       salaryFr,
       salaryUp,
     });
-  };
+  }, []);
+
   return (
     <main className={styles.main}>
       <CardWrapper className={CardWrapClasses.FILTER}>

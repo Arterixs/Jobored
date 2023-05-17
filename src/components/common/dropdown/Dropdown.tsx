@@ -1,38 +1,28 @@
-import { clsx } from 'clsx';
 import { useState } from 'react';
-import { DropdownClasses } from 'types/enums/classes';
+import { clsx } from 'clsx';
+import { UseMyContext } from 'hooks/UseMyContext';
+import { DropDownProps } from 'types/interface/props';
 import styles from './dropdown.module.css';
 
-export const Dropdown = ({
-  className,
-  classNameOptions,
-  value,
-  func,
-}: {
-  className: DropdownClasses;
-  classNameOptions: DropdownClasses;
-  value: string;
-  func: (value: string) => void;
-}) => {
+export const Dropdown = ({ className, activeOption, value, func }: DropDownProps) => {
   const [state, setState] = useState(false);
+  const refOption = activeOption;
+  const { dropdownFilter } = UseMyContext();
   const classMenu = clsx({
     [styles.menu]: true,
     [styles.menu_hidden]: !state,
   });
-
-  const toggleState = () => setState(!state);
-  const clickOptiom = (valueStr: string | null, elem: EventTarget) => {
-    if (valueStr && elem instanceof HTMLLIElement) {
-      func(valueStr);
-      toggleState();
-      elem.classList.add(styles.option_active);
-    }
+  const toggleStateList = () => setState(!state);
+  const clickOption = (valueStr: string, id: number) => {
+    refOption.current = id;
+    func(valueStr);
+    toggleStateList();
   };
   return (
     <section className={styles.dropdown}>
       <div
         className={clsx(styles[className])}
-        onClick={toggleState}
+        onClick={toggleStateList}
         aria-expanded={state ? 'true' : 'false'}
         role='combobox'
         onKeyDown={() => {}}
@@ -43,69 +33,25 @@ export const Dropdown = ({
         <span>{value}</span>
       </div>
       <ul id='industryTypes' role='listbox' aria-label='industry' className={classMenu}>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          IT, интернет, связь, телеком
-        </li>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          Кадры, управление персоналом
-        </li>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          Искусство, культура, развлечения
-        </li>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          Банки, инвестиции, лизинг
-        </li>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          Дизайн
-        </li>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          Hfefefe
-        </li>
-        <li
-          role='option'
-          aria-selected='false'
-          className={styles.option}
-          onKeyDown={() => {}}
-          onClick={(e) => clickOptiom(e.currentTarget.textContent, e.target)}
-        >
-          adawdwa
-        </li>
+        {dropdownFilter.map(({ id, text }) => {
+          const inClicked = refOption.current === id;
+          const classOption = clsx({
+            [styles.option]: true,
+            [styles.option_active]: inClicked,
+          });
+          return (
+            <li
+              role='option'
+              aria-selected={inClicked ? 'true' : 'false'}
+              className={classOption}
+              onKeyDown={() => {}}
+              onClick={() => clickOption(text, id)}
+              key={id}
+            >
+              {text}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

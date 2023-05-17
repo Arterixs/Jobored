@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import { MyContext } from 'context/context-api';
+import { UseMyContext } from 'hooks/UseMyContext';
 import { NavItem } from './Nav-item';
 import styles from './nav.module.css';
 
 export const Nav = () => {
-  const { navigation } = useContext(MyContext);
+  const { navigation } = UseMyContext();
   return (
     <nav>
       <ul className={styles.ul}>
