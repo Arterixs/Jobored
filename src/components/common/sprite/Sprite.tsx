@@ -31,6 +31,14 @@ export const Sprite = () => (
           strokeLinecap='round'
         />
       </symbol>
+      <symbol viewBox='0 0 16 8' id='arrowBig'>
+        <path
+          d='M1 0.999999L7.21905 6.33061C7.66844 6.7158 8.33156 6.7158 8.78095 6.33061L15 1'
+          stroke='CurrentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+        />
+      </symbol>
     </svg>
   </div>
 );

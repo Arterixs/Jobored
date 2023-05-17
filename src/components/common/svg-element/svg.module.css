@@ -18,3 +18,9 @@
   height: 12px;
   fill: none;
 }
+
+.arrow_big {
+  fill: none;
+  width: 16px;
+  height: 8px;
+}

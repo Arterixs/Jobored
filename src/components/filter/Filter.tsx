@@ -7,6 +7,7 @@ import { Input } from 'components/common/input/Input';
 import { Wrapper } from 'components/common/component-wrapper/Wrapper';
 import { FilterText, TextButton } from 'types/enums/text';
 import { ButtonClasses, DropdownClasses, InputClasses, SvgClasses } from 'types/enums/classes';
+import { MagicNumbers } from 'types/enums/magic-numbers';
 import { FilterProps } from 'types/interface/props';
 import { SvgId } from 'types/enums/svg';
 import { FiltBlock } from './Filt-block';
@@ -16,18 +17,17 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
   const [valueJob, setValueJob] = useState('');
   const [salaryFr, setSalaryFr] = useState('');
   const [salaryUp, setSalaryUp] = useState('');
-  const refOption = useRef(-1);
+  const refOption = useRef(MagicNumbers.EMPTY);
   const changeFr = (e: React.ChangeEvent<HTMLInputElement>) => setSalaryFr(e.target.value);
   const changeUp = (e: React.ChangeEvent<HTMLInputElement>) => setSalaryUp(e.target.value);
   const reset = () => {
-    refOption.current = -1;
+    refOption.current = MagicNumbers.EMPTY;
     setValueJob('');
     setSalaryFr('');
     setSalaryUp('');
   };
   const choiseOption = (value: string) => setValueJob(value);
   const applyClick = () => setDataFilter(valueJob, salaryFr, salaryUp);
-  console.log('render filter');
 
   return (
     <section className={styles.filter}>
@@ -42,7 +42,12 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
       </section>
       <div className={styles['wrapper-input']}>
         <FiltBlock title={FilterText.INDUSTRY}>
-          <Dropdown className={DropdownClasses.FILTER} value={valueJob} func={choiseOption} activeOption={refOption} />
+          <Dropdown
+            className={DropdownClasses.DROP_FILT}
+            value={valueJob}
+            setValue={choiseOption}
+            activeOption={refOption}
+          />
         </FiltBlock>
         <FiltBlock title={FilterText.SALARY}>
           <Wrapper>

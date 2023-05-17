@@ -62,3 +62,20 @@
   color: var(--grey-500);
   display: flex;
 }
+
+.btn_arrow-big {
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: var(--grey-500);
+}
+
+.turn {
+  color: var(--blue-500-main);
+  transition: all 0.3s ease;
+  transform: rotate(180deg);
+}

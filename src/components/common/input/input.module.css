@@ -12,6 +12,7 @@
   appearance: none;
   -moz-appearance: textfield;
   outline: none;
+  caret-color: var(--blue-500-main);
 }
 
 .filter::placeholder {

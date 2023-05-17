@@ -11,6 +11,7 @@ export interface ButtonProps {
   onClick: () => void;
   children: JSX.Element;
   className: ButtonClasses;
+  flag?: boolean;
 }
 
 export interface InputProps {
@@ -29,5 +30,5 @@ export interface DropDownProps {
   className: DropdownClasses;
   value: string;
   activeOption: React.MutableRefObject<number>;
-  func: (value: string) => void;
+  setValue: (value: string) => void;
 }

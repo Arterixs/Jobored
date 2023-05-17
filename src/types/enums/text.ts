@@ -9,4 +9,5 @@ export const enum FilterText {
   SALARY = 'Оклад',
   FROM = 'От',
   UP = 'До',
+  DEFAULT = 'Выберите отрасль',
 }
