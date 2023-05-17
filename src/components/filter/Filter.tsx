@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Button } from 'components/common/button/Button';
 import { Svg } from 'components/common/svg-element/Svg';
-import { MagicNumbers } from 'types/enums/magic-numbers';
 import { clickNumArrow } from 'utils/helpers/filter';
+import { Dropdown } from 'components/common/dropdown/Dropdown';
 import { Input } from 'components/common/input/Input';
 import { Wrapper } from 'components/common/component-wrapper/Wrapper';
 import { FilterText, TextButton } from 'types/enums/text';
-import { ButtonClasses, InputClasses, SvgClasses } from 'types/enums/classes';
+import { ButtonClasses, DropdownClasses, InputClasses, SvgClasses } from 'types/enums/classes';
 import { FilterProps } from 'types/interface/props';
 import { SvgId } from 'types/enums/svg';
 import { FiltBlock } from './Filt-block';
@@ -23,6 +23,7 @@ export const Filter = ({ setDataFilter }: FilterProps) => {
     setSalaryFr('');
     setSalaryUp('');
   };
+  const choiseOption = (value: string) => setValueJob(value);
   const applyClick = () => setDataFilter(valueJob, salaryFr, salaryUp);
   return (
     <section className={styles.filter}>
@@ -37,7 +38,13 @@ export const Filter = ({ setDataFilter }: FilterProps) => {
       </section>
       <div className={styles['wrapper-input']}>
         <FiltBlock title={FilterText.INDUSTRY}>
-          <Input type='text' className={InputClasses.FILTER} />
+          <Dropdown
+            className={DropdownClasses.FILTER}
+            classNameOptions={DropdownClasses.FILTER}
+            value={valueJob}
+            func={choiseOption}
+          />
+          {/* <Input type='text' className={InputClasses.FILTER} /> */}
         </FiltBlock>
         <FiltBlock title={FilterText.SALARY}>
           <Wrapper>

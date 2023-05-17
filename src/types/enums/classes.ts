@@ -20,3 +20,7 @@ export const enum InputClasses {
   TEXT = 'text',
   FILTER = 'filter',
 }
+
+export const enum DropdownClasses {
+  FILTER = 'filter',
+}
