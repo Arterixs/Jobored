@@ -45,3 +45,17 @@
   width: 20px;
   height: 20px;
 }
+
+.pag_arrow {
+  width: 12px;
+  height: 12px;
+  fill: none;
+}
+
+.turn_right {
+  transform: rotate(90deg);
+}
+
+.turn_left {
+  transform: rotate(270deg);
+}

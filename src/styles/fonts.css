@@ -46,3 +46,11 @@
   src: local('Poppins-regular'), url('../assets/fonts/Poppins-Regular.woff2') format('woff2'),
     url('../assets/fonts/Poppins-Regular.woff') format('woff'), url('../assets/fonts/Poppins-Regular.ttf') format('ttf');
 }
+
+@font-face {
+  font-family: 'Roboto-regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto-regular'), url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Roboto-Regular.woff') format('woff'), url('../assets/fonts/Roboto-Regular.woff2') format('ttf');
+}

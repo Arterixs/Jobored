@@ -10,8 +10,9 @@ export interface CardWrapProps {
 export interface ButtonProps {
   onClick: () => void;
   children: JSX.Element;
-  className: ButtonClasses;
+  className: ButtonClasses | ButtonClasses[];
   flag?: boolean;
+  disabled?: boolean;
 }
 
 export interface InputProps {

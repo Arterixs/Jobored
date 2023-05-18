@@ -14,6 +14,7 @@
   background-color: transparent;
   text-align: start;
   color: var(--grey-500);
+  transition: all 0.3s ease;
 }
 
 .btn_arrow-num:hover,
@@ -43,6 +44,8 @@
   color: var(--white);
 }
 
+.btn_pagination:hover,
+.btn_pagination:focus-visible,
 .btn_search:hover,
 .btn_search:focus-visible,
 .btn_apply:focus-visible,
@@ -50,6 +53,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: var(--blue-400);
+}
+
+.btn_pagination:hover,
+.btn_pagination:focus-visible {
+  border: 1px solid var(--blue-400);
 }
 
 .btn_search:active,
@@ -93,6 +101,7 @@
   background-color: var(--blue-500-main);
   border-radius: 8px;
   color: var(--white);
+  transition: all 0.3s ease;
 }
 
 .btn_star {
@@ -101,4 +110,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn_pagination {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey-300);
+  line-height: 22px;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: var(--font-roboto);
+}
+
+.btn_pagination:disabled {
+  border: 1px solid var(--grey-200);
+  color: var(--grey-200);
+  pointer-events: none;
+}
+
+.btn_pagination_active {
+  background-color: var(--blue-500-main);
+  border: 1px solid var(--blue-500-main);
+  color: var(--white);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.btn_pagination_enable {
+  color: var(--grey-600);
 }

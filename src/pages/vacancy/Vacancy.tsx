@@ -24,9 +24,7 @@ export const Vacancy = () => {
       <CardWrapper className={CardWrapClasses.FILTER}>
         <Filter setDataFilter={setDataFilter} />
       </CardWrapper>
-      <section className={styles.section}>
-        <MainPage />
-      </section>
+      <MainPage />
     </main>
   );
 };
