@@ -94,3 +94,11 @@
   border-radius: 8px;
   color: var(--white);
 }
+
+.btn_star {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

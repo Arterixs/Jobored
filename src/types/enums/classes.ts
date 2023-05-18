@@ -9,6 +9,7 @@ export const enum ButtonClasses {
   BTN_SEARCH = 'btn_search',
   BTN_ARR_NUM = 'btn_arrow-num',
   BTN_ARR_BIG = 'btn_arrow-big',
+  BTN_STAR = 'btn_star',
 }
 
 export const enum SvgClasses {
@@ -17,6 +18,8 @@ export const enum SvgClasses {
   ARROW_NUM = 'arrow_num',
   ARROW_BIG = 'arrow_big',
   SEARCH = 'search',
+  LOCATION = 'location',
+  STAR = 'star',
 }
 
 export const enum InputClasses {

@@ -38,3 +38,11 @@
     url('../assets/fonts/Poppins-SemiBold.woff') format('woff'),
     url('../assets/fonts/Poppins-SemiBold.ttf') format('ttf');
 }
+
+@font-face {
+  font-family: 'Poppins-regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins-regular'), url('../assets/fonts/Poppins-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Poppins-Regular.woff') format('woff'), url('../assets/fonts/Poppins-Regular.ttf') format('ttf');
+}

@@ -13,6 +13,7 @@ export interface DropDownOptions {
 }
 
 export interface CardJobProperty {
+  id?: number;
   title: string;
   salary: string;
   conditions: string;
