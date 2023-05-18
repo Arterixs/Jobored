@@ -5,7 +5,7 @@ import { clickNumArrow } from 'utils/helpers/filter';
 import { Dropdown } from 'components/common/dropdown/Dropdown';
 import { Input } from 'components/common/input/Input';
 import { Wrapper } from 'components/common/component-wrapper/Wrapper';
-import { FilterText, TextButton } from 'types/enums/text';
+import { InputText, TextButton } from 'types/enums/text';
 import { ButtonClasses, DropdownClasses, InputClasses, SvgClasses } from 'types/enums/classes';
 import { MagicNumbers } from 'types/enums/magic-numbers';
 import { FilterProps } from 'types/interface/props';
@@ -32,7 +32,7 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
   return (
     <section className={styles.filter}>
       <section className={styles['wrapper-reset']}>
-        <h2 className={styles.title}>{FilterText.FILTER}</h2>
+        <h2 className={styles.title}>{InputText.FILTER}</h2>
         <div className={styles['btn-wrap']}>
           <Button onClick={reset} className={ButtonClasses.BTN_RESET}>
             <span>{TextButton.RESET}</span>
@@ -41,7 +41,7 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
         </div>
       </section>
       <div className={styles['wrapper-input']}>
-        <FiltBlock title={FilterText.INDUSTRY}>
+        <FiltBlock title={InputText.INDUSTRY}>
           <Dropdown
             className={DropdownClasses.DROP_FILT}
             value={valueJob}
@@ -49,14 +49,14 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
             activeOption={refOption}
           />
         </FiltBlock>
-        <FiltBlock title={FilterText.SALARY}>
+        <FiltBlock title={InputText.SALARY}>
           <Wrapper>
             <Input
               type='number'
               className={InputClasses.FILTER}
               value={salaryFr}
               onChange={changeFr}
-              placeholder={FilterText.FROM}
+              placeholder={InputText.FROM}
             />
             <div className={styles['wrapper-btn']}>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryFr, setSalaryFr, true)}>
@@ -73,7 +73,7 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
               className={InputClasses.FILTER}
               value={salaryUp}
               onChange={changeUp}
-              placeholder={FilterText.UP}
+              placeholder={InputText.UP}
             />
             <div className={styles['wrapper-btn']}>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryUp, setSalaryUp, true)}>

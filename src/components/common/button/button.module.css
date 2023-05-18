@@ -43,6 +43,8 @@
   color: var(--white);
 }
 
+.btn_search:hover,
+.btn_search:focus-visible,
 .btn_apply:focus-visible,
 .btn_apply:hover {
   cursor: pointer;
@@ -50,6 +52,7 @@
   background-color: var(--blue-400);
 }
 
+.btn_search:active,
 .btn_apply:active {
   transition: all 0.3s ease;
   background-color: var(--blue-600);
@@ -78,4 +81,16 @@
   color: var(--blue-500-main);
   transition: all 0.3s ease;
   transform: rotate(180deg);
+}
+
+.btn_search {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  width: 83px;
+  text-align: center;
+  height: 32px;
+  background-color: var(--blue-500-main);
+  border-radius: 8px;
+  color: var(--white);
 }

@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import { UseMyContext } from 'hooks/UseMyContext';
 import { DropDownProps } from 'types/interface/props';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
-import { FilterText } from 'types/enums/text';
+import { InputText } from 'types/enums/text';
 import { SvgId } from 'types/enums/svg';
 import { Button } from '../button/Button';
 import { Svg } from '../svg-element/Svg';
@@ -36,7 +36,7 @@ export const Dropdown = ({ className, activeOption, value, setValue }: DropDownP
         tabIndex={-1}
       >
         <span>{value}</span>
-        {!value && <span className={styles.hint}>{FilterText.DEFAULT}</span>}
+        {!value && <span className={styles.hint}>{InputText.DEFAULT}</span>}
         <Button className={ButtonClasses.BTN_ARR_BIG} flag={state} onClick={() => {}}>
           <Svg className={SvgClasses.ARROW_BIG} id={SvgId.ARROW_BIG} />
         </Button>

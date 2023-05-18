@@ -6,7 +6,7 @@
 
 .filter {
   padding: 20px;
-  width: 315px;
+  min-width: 315px;
   height: 360px;
 }
 

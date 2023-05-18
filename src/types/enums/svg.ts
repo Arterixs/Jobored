@@ -4,4 +4,5 @@ export const enum SvgId {
   ARROW_NUM_Up = '#arrowNumUp',
   ARROW_NUM_DOWN = '#arrowNumDown',
   ARROW_BIG = '#arrowBig',
+  SEARCH = '#search',
 }
