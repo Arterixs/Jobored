@@ -4,7 +4,6 @@ import { METHOD_AUTH, PARAMS_AUTH, PARAMS_AUTH_PASSWORD } from 'utils/constants/
 import { $apiBase } from './axios';
 
 export const Auth = async () => {
-  console.log('летит запрос');
   try {
     const response = await $apiBase.get<Authorization>(`${METHOD_AUTH}${PARAMS_AUTH}?${PARAMS_AUTH_PASSWORD}`);
     const token = response.data.access_token;
