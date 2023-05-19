@@ -1,15 +1,16 @@
+import { LocalStorage, ServerCodeResponse } from 'types/enums/server';
 import { Authorization } from 'types/interface/server';
 import { METHOD_AUTH, PARAMS_AUTH, PARAMS_AUTH_PASSWORD } from 'utils/constants/server-api';
 import { $apiBase } from './axios';
 
 export const Auth = async () => {
+  console.log('летит запрос');
   try {
     const response = await $apiBase.get<Authorization>(`${METHOD_AUTH}${PARAMS_AUTH}?${PARAMS_AUTH_PASSWORD}`);
-    const result = response.data;
-    console.log(result);
-    return 1;
+    const token = response.data.access_token;
+    localStorage.setItem(LocalStorage.TOKEN, `${token}`);
+    return ServerCodeResponse.SUCCES;
   } catch (err) {
-    console.log(err);
-    return 0;
+    return ServerCodeResponse.ERROR;
   }
 };

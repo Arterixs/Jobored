@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import { UseMyContext } from 'hooks/UseMyContext';
+import { UseMyContext } from 'hooks/Use-my-context';
 import { DropDownProps } from 'types/interface/props';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { InputText } from 'types/enums/text';

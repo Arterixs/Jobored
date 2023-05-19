@@ -1,4 +1,4 @@
-import { UseMyContext } from 'hooks/UseMyContext';
+import { UseMyContext } from 'hooks/Use-my-context';
 import { NavItem } from './Nav-item';
 import styles from './nav.module.css';
 
