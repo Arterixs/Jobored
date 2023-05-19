@@ -4,6 +4,7 @@ import styles from './nav.module.css';
 
 export const Nav = () => {
   const { navigation } = UseMyContext();
+  console.log('render nav');
   return (
     <nav>
       <ul className={styles.ul}>

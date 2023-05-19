@@ -23,3 +23,38 @@ interface JobsPositions {
   title_rus: string;
   url_rus: string;
 }
+
+export interface Vacancies {
+  more: boolean;
+  objects: ArrayVacancies[];
+  subscription_active: boolean;
+  subscription_id: boolean;
+  total: number;
+}
+
+export interface ArrayVacancies {
+  id: number;
+  address: string;
+  age_from: number;
+  age_to: number;
+  profession: string;
+  firm_name: string;
+  town: VacanciesTown;
+  type_of_work: VacanciesWork;
+  payment_from: number;
+  payment_to: number;
+  currency: string;
+}
+
+interface VacanciesTown {
+  declension: string;
+  genitive: string;
+  hasMetro: boolean;
+  id: number;
+  title: string;
+}
+
+interface VacanciesWork {
+  id: number;
+  title: string;
+}

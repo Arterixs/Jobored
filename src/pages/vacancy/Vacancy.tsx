@@ -19,6 +19,7 @@ export const Vacancy = () => {
       salaryUp,
     });
   }, []);
+  console.log('render page');
   return (
     <main className={styles.main}>
       <CardWrapper className={CardWrapClasses.FILTER}>

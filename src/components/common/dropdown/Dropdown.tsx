@@ -42,8 +42,8 @@ export const Dropdown = ({ className, activeOption, value, setValue }: DropDownP
         </Button>
       </div>
       <ul id='industryTypes' role='listbox' aria-label='industry' className={classMenu}>
-        {dropdownFilter.map(({ id, text }) => {
-          const inClicked = refOption.current === id;
+        {dropdownFilter.map(({ key, title_rus }) => {
+          const inClicked = refOption.current === key;
           const classOption = clsx({
             [styles.option]: true,
             [styles.option_active]: inClicked,
@@ -54,10 +54,10 @@ export const Dropdown = ({ className, activeOption, value, setValue }: DropDownP
               aria-selected={inClicked ? 'true' : 'false'}
               className={classOption}
               onKeyDown={() => {}}
-              onClick={() => clickOption(text, id)}
-              key={id}
+              onClick={() => clickOption(title_rus, key)}
+              key={key}
             >
-              {text}
+              {title_rus}
             </li>
           );
         })}

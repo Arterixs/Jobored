@@ -5,6 +5,7 @@ export const BASE_URL = `https://startup-summer-2023-proxy.onrender.com/${VERSIO
 export const METHOD_AUTH = '/oauth2';
 export const PARAMS_AUTH = '/password';
 export const METHOD_JOB = '/catalogues';
+export const METHOD_VACANSIES = '/vacancies';
 
 export const PARAMS_AUTH_PASSWORD = `${UserAuthData.LOGIN}&${UserAuthData.PASSWORD}&${UserAuthData.ID}
 &${UserAuthData.SECRET}&${UserAuthData.HR}`;

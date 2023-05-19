@@ -1,13 +1,11 @@
 import { createContext } from 'react';
 import { dataNav } from 'data/nav-data';
 import { ContextData } from 'types/interface/context';
-import { dropdownData } from 'data/dropdown-filter';
-import { cardJobData } from 'data/card-job';
 
-export const contextBody = {
+export const contextBody: ContextData = {
   navigation: dataNav,
-  dropdownFilter: dropdownData,
-  cardContent: cardJobData,
+  dropdownFilter: [],
+  cardContent: [],
 };
 
 export const MyContext = createContext<ContextData>(contextBody);

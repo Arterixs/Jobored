@@ -59,3 +59,16 @@
 .turn_left {
   transform: rotate(270deg);
 }
+
+.close_window {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+
+.error_wind {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  color: var(--blue-500-main);
+}

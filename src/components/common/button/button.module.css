@@ -145,3 +145,19 @@
 .btn_pagination_enable {
   color: var(--grey-600);
 }
+
+.btn_close-window {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  transition: all 0.3s ease;
+  color: var(--blue-500-main);
+}
+
+.btn_close-window:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--blue-600);
+}

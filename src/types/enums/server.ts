@@ -13,4 +13,5 @@ export const enum LocalStorage {
 export const enum ServerCodeResponse {
   SUCCES = 1,
   ERROR = 0,
+  ERROR_TEXT = 'Что-то пошло не так. Обновите страницу через некоторое время.',
 }

@@ -1,9 +1,10 @@
 import { Nav } from './nav';
+import { ArrayVacancies, CatalogJobs } from './server';
 
 export interface ContextData {
   navigation: Nav[];
-  dropdownFilter: DropDownOptions[];
-  cardContent: CardJobProperty[];
+  dropdownFilter: CatalogJobs[];
+  cardContent: ArrayVacancies[];
 }
 
 export interface DropDownOptions {
@@ -15,7 +16,9 @@ export interface DropDownOptions {
 export interface CardJobProperty {
   id?: number;
   title: string;
-  salary: string;
+  salaryFrom: number;
+  salaryTo: number;
+  currency: string;
   conditions: string;
   location: string;
 }

@@ -13,10 +13,13 @@ export const enum ButtonClasses {
   BTN_PAGINATION = 'btn_pagination',
   BTN_PAGINATION_ACTIVE = 'btn_pagination_active',
   BTN_PAGINATION_ENABLE = 'btn_pagination_enable',
+  BTN_CLOSE_WINDOW = 'btn_close-window',
 }
 
 export const enum SvgClasses {
   CLOSE = 'close',
+  CLOSE_WINDOW = 'close_window',
+  ERROR_WIND = 'error_wind',
   LOGO = 'logo',
   ARROW_NUM = 'arrow_num',
   ARROW_BIG = 'arrow_big',

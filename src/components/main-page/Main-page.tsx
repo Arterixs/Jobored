@@ -13,9 +13,16 @@ export const MainPage = () => {
       <section className={styles.section}>
         <Search />
         <section className={styles.section}>
-          {cardContent.map(({ location, title, id, salary, conditions }) => (
-            <CardWrapper className={CardWrapClasses.CARD} key={id}>
-              <CardJob location={location} title={title} salary={salary} conditions={conditions} />
+          {cardContent.map((item) => (
+            <CardWrapper className={CardWrapClasses.CARD} key={item.id}>
+              <CardJob
+                location={item.town.title}
+                title={item.profession}
+                salaryFrom={item.payment_from}
+                salaryTo={item.payment_to}
+                currency={item.currency}
+                conditions={item.type_of_work.title}
+              />
             </CardWrapper>
           ))}
         </section>
