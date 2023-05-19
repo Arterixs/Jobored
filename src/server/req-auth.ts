@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { Authorization } from 'types/interface/server';
 import {
   CLIENT_ID,
   CLIENT_SECRET,
@@ -12,10 +13,10 @@ import { $apiBase } from './axios';
 
 export const Auth = async () => {
   try {
-    const response = await $apiBase.get(
+    const response = await $apiBase.get<Authorization>(
       `${METHOD_AUTH}${PARAMS_AUTH}?${LOGIN_USER}&${PASSWORD}&${CLIENT_ID}&${CLIENT_SECRET}&${HR}`
     );
-    const result = await response.data;
+    const result = response.data;
     console.log(result);
     return 1;
   } catch (err) {
