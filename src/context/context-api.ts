@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { dataNav } from 'data/nav-data';
-import { ContextData } from 'types/interface/context';
+import { ContextData, ContextLoaded } from 'types/interface/context';
 
 export const contextBody: ContextData = {
   navigation: dataNav,
@@ -9,3 +9,4 @@ export const contextBody: ContextData = {
 };
 
 export const MyContext = createContext<ContextData>(contextBody);
+export const Context = createContext<ContextLoaded | null>(null);

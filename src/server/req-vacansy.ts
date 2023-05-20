@@ -8,7 +8,6 @@ export const getVacansy = async () => {
   try {
     const response = await $api.get<Vacancies>(`${METHOD_VACANSIES}?count=4&page=1/`);
     contextBody.cardContent = response.data.objects;
-    console.log(response.data);
     return ServerCodeResponse.SUCCES;
   } catch (err) {
     return ServerCodeResponse.ERROR;

@@ -8,7 +8,6 @@ export const GetJobs = async () => {
   try {
     const response = await $apiBase.get<CatalogJobs[]>(`${METHOD_JOB}/`);
     contextBody.dropdownFilter = response.data;
-    console.log(response.data);
     return ServerCodeResponse.SUCCES;
   } catch (err) {
     return ServerCodeResponse.ERROR;

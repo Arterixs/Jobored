@@ -1,5 +1,7 @@
+import { ActionsReducer } from 'types/types/actions';
 import { Nav } from './nav';
 import { ArrayVacancies, CatalogJobs } from './server';
+import { Store } from './store';
 
 export interface ContextData {
   navigation: Nav[];
@@ -21,4 +23,9 @@ export interface CardJobProperty {
   currency: string;
   conditions: string;
   location: string;
+}
+
+export interface ContextLoaded {
+  state: Store;
+  dispatch: React.Dispatch<ActionsReducer>;
 }

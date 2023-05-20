@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ErrorMessage } from 'components/common/error-message/Error-message';
+import { ErrorWrap } from 'components/common/error-message/Error-wrap';
 import { LogoWrapper } from './Logo';
 import { Nav } from '../navigation/Nav';
 import styles from './header.module.css';
@@ -7,7 +7,7 @@ import styles from './header.module.css';
 export const Header = memo(() => (
   <header className={styles.header}>
     <section className={styles.wrapper}>
-      {/* <ErrorMessage /> */}
+      <ErrorWrap />
       <div className={styles.container}>
         <LogoWrapper />
         <Nav />

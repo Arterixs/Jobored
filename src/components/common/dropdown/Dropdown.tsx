@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import { UseMyContext } from 'hooks/Use-my-context';
+import { UseDataContext } from 'hooks/use-data-context';
 import { DropDownProps } from 'types/interface/props';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { InputText } from 'types/enums/text';
@@ -11,7 +11,7 @@ import styles from './dropdown.module.css';
 
 export const Dropdown = ({ className, activeOption, value, setValue }: DropDownProps) => {
   const [state, setState] = useState(false);
-  const { dropdownFilter } = UseMyContext();
+  const { dropdownFilter } = UseDataContext();
   const classMenu = clsx({
     [styles.menu]: true,
     [styles.menu_hidden]: !state,

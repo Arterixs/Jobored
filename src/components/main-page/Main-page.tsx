@@ -2,12 +2,12 @@ import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { Search } from 'components/common/search/Search';
 import { Pagination } from 'components/pagination/Pagination';
-import { UseMyContext } from 'hooks/Use-my-context';
+import { UseDataContext } from 'hooks/use-data-context';
 import { CardWrapClasses } from 'types/enums/classes';
 import styles from './main-page.module.css';
 
 export const MainPage = () => {
-  const { cardContent } = UseMyContext();
+  const { cardContent } = UseDataContext();
   return (
     <section className={styles.main_page}>
       <section className={styles.section}>
