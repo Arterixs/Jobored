@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { MagicNumbers } from 'types/enums/magic-numbers';
 import { SvgId } from 'types/enums/svg';
+import { ARRAY_BTN_PAGE } from 'utils/constants/magic-number';
 import styles from './pagination.module.css';
 
 const arr = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
 export const Pagination = () => {
-  const [amountBtn, setBtn] = useState([1, 2, 3]);
+  const [amountBtn, setBtn] = useState(ARRAY_BTN_PAGE);
   const [currentPage, setCurrentPage] = useState(MagicNumbers.ONE);
   const [disabledLeft, setDisabledLeft] = useState(true);
   const [disabledRight, setDisabledRight] = useState(false);
@@ -18,10 +19,10 @@ export const Pagination = () => {
     const updateAmountPage = flag
       ? amountBtn.map((item) => item + MagicNumbers.ONE)
       : amountBtn.map((item) => item - MagicNumbers.ONE);
-    const numberIs = flag ? MagicNumbers.MIN_PAGE : MagicNumbers.MAX_PAGE;
-    const disabledIs = flag ? MagicNumbers.MAX_PAGE : MagicNumbers.MIN_PAGE;
-    const operation = flag ? currentPage + MagicNumbers.ONE : currentPage - MagicNumbers.ONE;
-    if (updateAmountPage[MagicNumbers.LAST_PAGE_INDEX] !== numberIs) {
+    const conditionRemoveDisabled = flag ? MagicNumbers.MIN_PAGE : MagicNumbers.MAX_PAGE;
+    const conditionDisabled = flag ? MagicNumbers.MAX_PAGE : MagicNumbers.MIN_PAGE;
+    const nextPage = flag ? currentPage + MagicNumbers.ONE : currentPage - MagicNumbers.ONE;
+    if (updateAmountPage[MagicNumbers.LAST_PAGE_INDEX] !== conditionRemoveDisabled) {
       if (flag) {
         setDisabledLeft(false);
       } else {
@@ -29,8 +30,8 @@ export const Pagination = () => {
       }
     }
     setBtn(updateAmountPage);
-    setCurrentPage(operation);
-    if (updateAmountPage[MagicNumbers.LAST_PAGE_INDEX] === disabledIs) {
+    setCurrentPage(nextPage);
+    if (updateAmountPage[MagicNumbers.LAST_PAGE_INDEX] === conditionDisabled) {
       if (flag) {
         setDisabledRight(true);
       } else {
