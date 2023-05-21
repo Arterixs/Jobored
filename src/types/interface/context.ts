@@ -1,6 +1,7 @@
-import { ActionsReducer } from 'types/types/actions';
+import { ActionReducerInfo, ActionsReducer } from 'types/types/actions';
 import { Nav } from './nav';
 import { ArrayVacancies, CatalogJobs } from './server';
+import { StateInfo } from './states';
 import { Store } from './store';
 
 export interface ContextData {
@@ -33,4 +34,9 @@ interface BtnPagination {
 export interface ContextLoaded {
   state: Store;
   dispatch: React.Dispatch<ActionsReducer>;
+}
+
+export interface ContextInform {
+  state: StateInfo;
+  dispatch: React.Dispatch<ActionReducerInfo>;
 }

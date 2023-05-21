@@ -7,7 +7,8 @@ export const sendReqJobs = async () => {
   console.log('летит запрос №2');
   try {
     const response = await $apiBase.get<CatalogJobs[]>(`${METHOD_JOB}/`);
-    contextBody.dropdownFilter = response.data;
+    // contextBody.dropdownFilter = response.data;
+    return response.data;
   } catch (err) {
     throw new Error('Bad Request');
   }

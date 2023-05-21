@@ -2,18 +2,20 @@ import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { Search } from 'components/common/search/Search';
 import { Pagination } from 'components/pagination/Pagination';
-import { useDataContext } from 'hooks/use-data-context';
+import { useInfoContext } from 'hooks/use-info-context';
 import { CardWrapClasses } from 'types/enums/classes';
 import styles from './main-page.module.css';
 
 export const MainPage = () => {
-  const { cardContent } = useDataContext();
+  const {
+    state: { listVacancies },
+  } = useInfoContext();
   return (
     <section className={styles.main_page}>
       <section className={styles.section}>
         <Search />
         <section className={styles.section}>
-          {cardContent.map((item) => (
+          {listVacancies.map((item) => (
             <CardWrapper className={CardWrapClasses.CARD} key={item.id}>
               <CardJob
                 location={item.town.title}

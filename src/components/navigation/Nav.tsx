@@ -1,9 +1,9 @@
-import { UseDataContext } from 'hooks/use-data-context';
+import { useDataContext } from 'hooks/use-data-context';
 import { NavItem } from './Nav-item';
 import styles from './nav.module.css';
 
 export const Nav = () => {
-  const { navigation } = UseDataContext();
+  const { navigation } = useDataContext();
   return (
     <nav>
       <ul className={styles.ul}>

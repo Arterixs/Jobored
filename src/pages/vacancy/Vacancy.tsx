@@ -1,15 +1,20 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useReducer, useState } from 'react';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { StateVacFilter } from 'types/interface/states';
 import { Filter } from 'components/filter/Filter';
 import { MainPage } from 'components/main-page/Main-page';
 import { CardWrapClasses } from 'types/enums/classes';
 import { UseErrorContext } from 'hooks/use-loaded-context';
+import { ContextInfo } from 'context/context-api';
 import { useSendInformation } from 'hooks/use-send-info';
+import { stateInfo } from 'store/states/state-info';
+import { reducerInfo } from 'store/reducers/reducer-info';
 import styles from './vacancy.module.css';
 
 export const Vacancy = () => {
-  const { dispatch } = UseErrorContext();
+  const [state, dispatch] = useReducer(reducerInfo, stateInfo);
+  const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const dispatchServer = UseErrorContext().dispatch;
   const [value, setValue] = useState<StateVacFilter>({
     job: '',
     salaryFr: '',
@@ -22,14 +27,16 @@ export const Vacancy = () => {
       salaryUp,
     });
   }, []);
-  useSendInformation(dispatch);
+  useSendInformation(dispatchServer, dispatch);
   console.log('render page');
   return (
     <main className={styles.main}>
-      <CardWrapper className={CardWrapClasses.FILTER}>
-        <Filter setDataFilter={setDataFilter} />
-      </CardWrapper>
-      <MainPage />
+      <ContextInfo.Provider value={contextValue}>
+        <CardWrapper className={CardWrapClasses.FILTER}>
+          <Filter setDataFilter={setDataFilter} />
+        </CardWrapper>
+        <MainPage />
+      </ContextInfo.Provider>
     </main>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import { UseDataContext } from 'hooks/use-data-context';
 import { DropDownProps } from 'types/interface/props';
+import { useInfoContext } from 'hooks/use-info-context';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { InputText } from 'types/enums/text';
 import { SvgId } from 'types/enums/svg';
@@ -11,7 +11,11 @@ import styles from './dropdown.module.css';
 
 export const Dropdown = ({ className, activeOption, value, setValue }: DropDownProps) => {
   const [state, setState] = useState(false);
-  const { dropdownFilter } = UseDataContext();
+
+  const {
+    state: { directoryIndustry },
+  } = useInfoContext();
+
   const classMenu = clsx({
     [styles.menu]: true,
     [styles.menu_hidden]: !state,
@@ -42,7 +46,7 @@ export const Dropdown = ({ className, activeOption, value, setValue }: DropDownP
         </Button>
       </div>
       <ul id='industryTypes' role='listbox' aria-label='industry' className={classMenu}>
-        {dropdownFilter.map(({ key, title_rus }) => {
+        {directoryIndustry.map(({ key, title_rus }) => {
           const inClicked = refOption.current === key;
           const classOption = clsx({
             [styles.option]: true,
