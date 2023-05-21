@@ -1,6 +1,9 @@
 import { Button } from 'components/common/button/Button';
 import { Svg } from 'components/common/svg-element/Svg';
 import { useDataContext } from 'hooks/use-data-context';
+import { useInfoContext } from 'hooks/use-info-context';
+import { UseErrorContext } from 'hooks/use-loaded-context';
+import { sendPage } from 'hooks/use-send-page';
 import { useState } from 'react';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { MagicNumbers } from 'types/enums/magic-numbers';
@@ -14,6 +17,8 @@ export const Pagination = () => {
   const [disabledLeft, setDisabledLeft] = useState(true);
   const [disabledRight, setDisabledRight] = useState(false);
   const { btnPages } = useDataContext();
+  const dispatchServer = UseErrorContext().dispatch;
+  const { dispatch } = useInfoContext();
 
   const handleControlPagination = (flag: boolean) => {
     const updateAmountPage = flag
@@ -38,8 +43,12 @@ export const Pagination = () => {
         setDisabledLeft(true);
       }
     }
+    sendPage(dispatchServer, dispatch, nextPage - 1);
   };
-  const handleClick = (numberPage: number) => setCurrentPage(numberPage);
+  const handleClick = (numberPage: number) => {
+    setCurrentPage(numberPage);
+    sendPage(dispatchServer, dispatch, numberPage - 1);
+  };
   return (
     <div className={styles.wrap}>
       <Button

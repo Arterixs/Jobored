@@ -6,8 +6,6 @@ import { btnPagination } from 'data/btn-pagination';
 export const contextBody: ContextData = {
   navigation: dataNav,
   btnPages: btnPagination,
-  dropdownFilter: [],
-  cardContent: [],
 };
 
 export const MyContext = createContext<ContextData>(contextBody);

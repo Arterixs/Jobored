@@ -4,4 +4,5 @@ export const enum MagicNumbers {
   MAX_PAGE = 125,
   MIN_PAGE = 3,
   LAST_PAGE_INDEX = 2,
+  DEFAULT_PAGE = 0,
 }

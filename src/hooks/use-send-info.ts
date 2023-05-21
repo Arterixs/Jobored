@@ -3,6 +3,7 @@ import { sendReqJobs } from 'server/req-jobs';
 import { sendReqVacansy } from 'server/req-vacansy';
 import { ActionCommon, ActionLoaded } from 'store/actions';
 import { ActionLoadInfo } from 'types/enums/actions';
+import { MagicNumbers } from 'types/enums/magic-numbers';
 import { ActionReducerInfo, ActionsReducer } from 'types/types/actions';
 
 export const useSendInformation = (
@@ -13,7 +14,7 @@ export const useSendInformation = (
   useEffect(() => {
     if (ref.current) {
       dispatchServer(ActionLoaded(false));
-      Promise.all([sendReqVacansy(), sendReqJobs()])
+      Promise.all([sendReqVacansy(MagicNumbers.DEFAULT_PAGE), sendReqJobs()])
         .then((result) => {
           dispatch({
             type: ActionLoadInfo.SET_LIST_VACANCIES,

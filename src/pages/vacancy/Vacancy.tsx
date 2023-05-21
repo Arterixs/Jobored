@@ -28,7 +28,6 @@ export const Vacancy = () => {
     });
   }, []);
   useSendInformation(dispatchServer, dispatch);
-  console.log('render page');
   return (
     <main className={styles.main}>
       <ContextInfo.Provider value={contextValue}>
