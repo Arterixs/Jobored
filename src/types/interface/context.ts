@@ -7,7 +7,7 @@ export interface ContextData {
   navigation: Nav[];
   dropdownFilter: CatalogJobs[];
   cardContent: ArrayVacancies[];
-  amountBtnPage: BtnPagination[];
+  btnPages: BtnPagination[];
 }
 
 export interface DropDownOptions {
