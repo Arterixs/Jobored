@@ -1,9 +1,11 @@
 import { createContext } from 'react';
 import { dataNav } from 'data/nav-data';
 import { ContextData, ContextLoaded } from 'types/interface/context';
+import { btnPagination } from './btn-pagination';
 
 export const contextBody: ContextData = {
   navigation: dataNav,
+  amountBtnPage: btnPagination,
   dropdownFilter: [],
   cardContent: [],
 };

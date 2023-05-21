@@ -7,6 +7,7 @@ export interface ContextData {
   navigation: Nav[];
   dropdownFilter: CatalogJobs[];
   cardContent: ArrayVacancies[];
+  amountBtnPage: BtnPagination[];
 }
 
 export interface DropDownOptions {
@@ -23,6 +24,10 @@ export interface CardJobProperty {
   currency: string;
   conditions: string;
   location: string;
+}
+
+interface BtnPagination {
+  id: number;
 }
 
 export interface ContextLoaded {
