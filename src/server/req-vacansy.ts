@@ -1,15 +1,14 @@
 import { contextBody } from 'context/context-api';
-import { ServerCodeResponse } from 'types/enums/server';
 import { Vacancies } from 'types/interface/server';
 import { METHOD_VACANSIES } from 'utils/constants/server-api';
 import { $api } from './axios';
 
-export const getVacansy = async () => {
+export const sendReqVacansy = async () => {
+  console.log('Летит запрос');
   try {
-    const response = await $api.get<Vacancies>(`${METHOD_VACANSIES}?count=4&page=1/`);
+    const response = await $api.get<Vacancies>(`${METHOD_VACANSIES}?count=4&page=0/`);
     contextBody.cardContent = response.data.objects;
-    return ServerCodeResponse.SUCCES;
   } catch (err) {
-    return ServerCodeResponse.ERROR;
+    throw Error('Bad Request');
   }
 };

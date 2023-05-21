@@ -4,6 +4,7 @@ import { METHOD_AUTH, PARAMS_AUTH, PARAMS_AUTH_PASSWORD } from 'utils/constants/
 import { $apiBase } from './axios';
 
 export const senReqAuth = async () => {
+  console.log('Летит запрос №3');
   try {
     const response = await $apiBase.get<Authorization>(`${METHOD_AUTH}${PARAMS_AUTH}?${PARAMS_AUTH_PASSWORD}`);
     const token = response.data.access_token;

@@ -12,7 +12,6 @@ export const enum ButtonClasses {
   BTN_STAR = 'btn_star',
   BTN_PAGINATION = 'btn_pagination',
   BTN_PAGINATION_ACTIVE = 'btn_pagination_active',
-  BTN_PAGINATION_ENABLE = 'btn_pagination_enable',
   BTN_CLOSE_WINDOW = 'btn_close-window',
 }
 

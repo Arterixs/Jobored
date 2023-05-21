@@ -122,10 +122,10 @@
   border: 1px solid var(--grey-300);
   line-height: 22px;
   background-color: var(--white);
-  color: var(--black);
   border-radius: 4px;
   transition: all 0.3s ease;
   font-family: var(--font-roboto);
+  color: var(--grey-600);
 }
 
 .btn_pagination:disabled {
@@ -140,10 +140,6 @@
   color: var(--white);
   transition: all 0.3s ease;
   pointer-events: none;
-}
-
-.btn_pagination_enable {
-  color: var(--grey-600);
 }
 
 .btn_close-window {

@@ -14,6 +14,7 @@ export const Layout = () => {
   const [state, dispatch] = useReducer(reducer, store);
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
   useSendAuth(dispatch);
+  console.log('render lauoty');
   return (
     <div className={styles.wrapper}>
       <Context.Provider value={contextValue}>
