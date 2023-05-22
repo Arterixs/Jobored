@@ -26,6 +26,16 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
+}
+
+.parser {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.parser ul {
+  margin-left: 16px;
 }

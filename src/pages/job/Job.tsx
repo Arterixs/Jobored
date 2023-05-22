@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import parse from 'html-react-parser';
 import { CardJob } from 'components/card-job/Card-job';
 import { getIdVacancy } from 'utils/helpers/job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
@@ -23,7 +24,7 @@ export const Job = () => {
         <div className={styles.container}>
           {obj && (
             <section className={styles.section}>
-              <CardWrapper className={CardWrapClasses.CARD} key={obj.id} job>
+              <CardWrapper className={CardWrapClasses.CARD} job>
                 <CardJob
                   location={obj.town.title}
                   title={obj.profession}
@@ -34,6 +35,9 @@ export const Job = () => {
                   id={obj.id}
                   job
                 />
+              </CardWrapper>
+              <CardWrapper className={CardWrapClasses.CARD}>
+                <section className={styles.parser}>{parse(obj.vacancyRichText)}</section>
               </CardWrapper>
             </section>
           )}

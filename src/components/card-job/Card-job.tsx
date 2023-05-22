@@ -41,7 +41,7 @@ export const CardJob = ({
         <h2 className={classesTitle}>{title}</h2>
         <Star id={id} changeStar={changeStar} />
       </div>
-      <div className={styles.wrap_description}>
+      <div className={classesConditions}>
         <span className={classesSalary}>{salary}</span>
         <span className={styles.dot}>•</span>
         <span>{conditions}</span>

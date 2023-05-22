@@ -44,6 +44,7 @@ export interface ArrayVacancies {
   payment_from: number;
   payment_to: number;
   currency: string;
+  vacancyRichText: string;
 }
 
 interface VacanciesTown {

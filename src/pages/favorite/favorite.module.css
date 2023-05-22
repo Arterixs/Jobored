@@ -28,6 +28,7 @@
   max-width: 773px;
   width: 100%;
   height: 100%;
+  gap: 50px;
 }
 
 .link {
