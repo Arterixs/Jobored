@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Jobored-Paralect/static/css/main.c5ec882a.css",
+    "main.js": "/Jobored-Paralect/static/js/main.bd5875b6.js",
+    "static/media/Inter-Bold.ttf": "/Jobored-Paralect/static/media/Inter-Bold.9aab1ebe6bd16660e37e.ttf",
+    "static/media/Inter-SemiBold.ttf": "/Jobored-Paralect/static/media/Inter-SemiBold.1616d5720720a412cfc8.ttf",
+    "static/media/Inter-Medium.ttf": "/Jobored-Paralect/static/media/Inter-Medium.9d1fd4235eeb376c5f96.ttf",
+    "static/media/Inter-Regular.ttf": "/Jobored-Paralect/static/media/Inter-Regular.b559a93b35af397f4b6f.ttf",
+    "static/media/Inter-Bold.woff": "/Jobored-Paralect/static/media/Inter-Bold.2e0e233b4c861f8fb281.woff",
+    "static/media/Inter-SemiBold.woff": "/Jobored-Paralect/static/media/Inter-SemiBold.099abddfb4af9e8fcdcf.woff",
+    "static/media/Poppins-Regular.ttf": "/Jobored-Paralect/static/media/Poppins-Regular.4211496d0e075ffe7c2f.ttf",
+    "static/media/Inter-Medium.woff": "/Jobored-Paralect/static/media/Inter-Medium.943035b994f748e10c96.woff",
+    "static/media/Poppins-SemiBold.ttf": "/Jobored-Paralect/static/media/Poppins-SemiBold.090bd619384bb8d4c289.ttf",
+    "static/media/Inter-Regular.woff": "/Jobored-Paralect/static/media/Inter-Regular.53dae8f809cb7a061df4.woff",
+    "static/media/Inter-Bold.woff2": "/Jobored-Paralect/static/media/Inter-Bold.eac83911831c0fc799e1.woff2",
+    "static/media/Inter-SemiBold.woff2": "/Jobored-Paralect/static/media/Inter-SemiBold.a99a6c6d86d03d0eab4f.woff2",
+    "static/media/Inter-Medium.woff2": "/Jobored-Paralect/static/media/Inter-Medium.4f1fb867124d4ac98080.woff2",
+    "static/media/Inter-Regular.woff2": "/Jobored-Paralect/static/media/Inter-Regular.3340dc6e354eade9d667.woff2",
+    "static/media/Roboto-Regular.woff": "/Jobored-Paralect/static/media/Roboto-Regular.a3cfa1da9af6de7449f2.woff",
+    "static/media/Poppins-Regular.woff": "/Jobored-Paralect/static/media/Poppins-Regular.b17378aa66240905ad6b.woff",
+    "static/media/Poppins-SemiBold.woff": "/Jobored-Paralect/static/media/Poppins-SemiBold.54630fb0b3d67ce4ec32.woff",
+    "static/media/Roboto-Regular.woff2": "/Jobored-Paralect/static/media/Roboto-Regular.5aed06c3c69cd1d41aa5.woff2",
+    "static/media/Poppins-SemiBold.woff2": "/Jobored-Paralect/static/media/Poppins-SemiBold.93225d7c62051a69f95d.woff2",
+    "static/media/Poppins-Regular.woff2": "/Jobored-Paralect/static/media/Poppins-Regular.67f2fd4268f7337f5c63.woff2",
+    "index.html": "/Jobored-Paralect/index.html",
+    "main.c5ec882a.css.map": "/Jobored-Paralect/static/css/main.c5ec882a.css.map",
+    "main.bd5875b6.js.map": "/Jobored-Paralect/static/js/main.bd5875b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5ec882a.css",
+    "static/js/main.bd5875b6.js"
+  ]
+}
