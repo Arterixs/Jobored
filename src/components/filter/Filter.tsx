@@ -8,13 +8,26 @@ import { Wrapper } from 'components/common/component-wrapper/Wrapper';
 import { InputText, TextButton } from 'types/enums/text';
 import { ButtonClasses, DropdownClasses, InputClasses, SvgClasses } from 'types/enums/classes';
 import { MagicNumbers } from 'types/enums/magic-numbers';
-import { FilterProps } from 'types/interface/props';
 import { SvgId } from 'types/enums/svg';
 import { FiltBlock } from './Filt-block';
 import styles from './filter.module.css';
 
-export const Filter = memo(({ setDataFilter }: FilterProps) => {
-  const [valueJob, setValueJob] = useState('');
+const isValid = (salaryFrom: string, salaryTo: string, valueJob: string) => {
+  let result = '';
+  if (salaryFrom) {
+    result += `&payment_from=${salaryFrom}`;
+  }
+  if (salaryTo) {
+    result += `&payment_to=${salaryTo}`;
+  }
+  if (valueJob) {
+    result += `&catalogues=${valueJob}`;
+  }
+  return result;
+};
+
+export const Filter = memo(({ funcRequest }: { funcRequest: (value: string) => void }) => {
+  const [valueJob, setValueJob] = useState({ value: '', key: '' });
   const [salaryFr, setSalaryFr] = useState('');
   const [salaryUp, setSalaryUp] = useState('');
   const refOption = useRef(MagicNumbers.EMPTY);
@@ -22,12 +35,12 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
   const changeUp = (e: React.ChangeEvent<HTMLInputElement>) => setSalaryUp(e.target.value);
   const reset = () => {
     refOption.current = MagicNumbers.EMPTY;
-    setValueJob('');
+    setValueJob({ value: '', key: '' });
     setSalaryFr('');
     setSalaryUp('');
   };
-  const choiseOption = (value: string) => setValueJob(value);
-  const applyClick = () => setDataFilter(valueJob, salaryFr, salaryUp);
+  const choiseOption = (value: string, key: string) => setValueJob({ value, key });
+  const applyClick = () => funcRequest(isValid(salaryFr, salaryUp, valueJob.key));
 
   return (
     <section className={styles.filter}>
@@ -44,7 +57,7 @@ export const Filter = memo(({ setDataFilter }: FilterProps) => {
         <FiltBlock title={InputText.INDUSTRY}>
           <Dropdown
             className={DropdownClasses.DROP_FILT}
-            value={valueJob}
+            value={valueJob.value}
             setValue={choiseOption}
             activeOption={refOption}
           />

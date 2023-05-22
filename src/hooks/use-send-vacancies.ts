@@ -1,21 +1,25 @@
 import { useEffect, useRef } from 'react';
-import { sendReqJobs } from 'server/req-jobs';
+import { sendReqVacansy } from 'server/req-vacansy';
 import { ActionCommon, ActionLoaded } from 'store/actions';
 import { ActionLoadInfo } from 'types/enums/actions';
+import { StateDataRequest } from 'types/interface/states';
 import { ActionReducerInfo, ActionsReducer } from 'types/types/actions';
+import { convertQueryParams } from 'utils/helpers/main-page';
 
-export const useSendInformation = (
+export const useSendVacancies = (
   dispatchServer: React.Dispatch<ActionsReducer>,
-  dispatch: React.Dispatch<ActionReducerInfo>
+  dispatch: React.Dispatch<ActionReducerInfo>,
+  state: StateDataRequest
 ) => {
-  const ref = useRef(true);
+  const myRef = useRef(false);
   useEffect(() => {
-    if (ref.current) {
+    if (myRef.current) {
+      const queryParams = convertQueryParams(state);
       dispatchServer(ActionLoaded(false));
-      sendReqJobs()
+      sendReqVacansy(queryParams)
         .then((result) => {
           dispatch({
-            type: ActionLoadInfo.SET_DIRECT_INDUSTRY,
+            type: ActionLoadInfo.SET_LIST_VACANCIES,
             payload: result,
           });
           dispatchServer(ActionLoaded(true));
@@ -24,6 +28,6 @@ export const useSendInformation = (
           dispatchServer(ActionCommon(true));
         });
     }
-    ref.current = false;
-  }, [dispatchServer, dispatch]);
+    myRef.current = true;
+  }, [dispatchServer, dispatch, state]);
 };

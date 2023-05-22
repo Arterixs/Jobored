@@ -22,9 +22,9 @@ export const Dropdown = ({ className, activeOption, value, setValue }: DropDownP
   });
   const refOption = activeOption;
   const toggleStateList = () => setState(!state);
-  const clickOption = (valueStr: string, id: number) => {
-    refOption.current = id;
-    setValue(valueStr);
+  const clickOption = (valueStr: string, key: number) => {
+    refOption.current = key;
+    setValue(valueStr, `${key}`);
     toggleStateList();
   };
   return (

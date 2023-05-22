@@ -6,14 +6,19 @@ import { useInfoContext } from 'hooks/use-info-context';
 import { CardWrapClasses } from 'types/enums/classes';
 import styles from './main-page.module.css';
 
-export const MainPage = () => {
+interface Props {
+  funcSearch: (value: string) => void;
+  funcPage: (value: string) => void;
+}
+
+export const MainPage = ({ funcSearch, funcPage }: Props) => {
   const {
     state: { listVacancies },
   } = useInfoContext();
   return (
     <section className={styles.main_page}>
       <section className={styles.section}>
-        <Search />
+        <Search funcSearch={funcSearch} />
         <section className={styles.section}>
           {listVacancies.map((item) => (
             <CardWrapper className={CardWrapClasses.CARD} key={item.id}>
@@ -29,7 +34,7 @@ export const MainPage = () => {
           ))}
         </section>
       </section>
-      <Pagination />
+      <Pagination funcPage={funcPage} />
     </section>
   );
 };

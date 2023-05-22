@@ -23,13 +23,9 @@ export interface InputProps {
   placeholder?: string;
 }
 
-export interface FilterProps {
-  setDataFilter: (job: string, salaryFr: string, salaryUp: string) => void;
-}
-
 export interface DropDownProps {
   className: DropdownClasses;
   value: string;
   activeOption: React.MutableRefObject<number>;
-  setValue: (value: string) => void;
+  setValue: (value: string, key: string) => void;
 }

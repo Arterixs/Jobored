@@ -10,3 +10,9 @@ export interface StateInfo {
   directoryIndustry: CatalogJobs[];
   listVacancies: ArrayVacancies[];
 }
+
+export interface StateDataRequest {
+  pageBtn: string;
+  filter: string;
+  search: string;
+}
