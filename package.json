@@ -2,7 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://arterixs.github.io/Jobored-Paralect/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "eject": "react-scripts eject",
@@ -35,6 +38,7 @@
     "@craco/craco": "^7.1.0",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
+    "gh-pages": "^5.0.0",
     "html-react-parser": "^3.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

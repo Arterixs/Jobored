@@ -11,7 +11,7 @@ export const useSendVacancies = (
   dispatch: React.Dispatch<ActionReducerInfo>,
   state: StateDataRequest
 ) => {
-  const myRef = useRef(false);
+  const myRef = useRef(true);
   useEffect(() => {
     if (myRef.current) {
       const queryParams = convertQueryParams(state);
@@ -27,7 +27,7 @@ export const useSendVacancies = (
         .catch(() => {
           dispatchServer(ActionCommon(true));
         });
+      myRef.current = false;
     }
-    myRef.current = true;
   }, [dispatchServer, dispatch, state]);
 };

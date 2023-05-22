@@ -17,7 +17,6 @@ export const VacanciesPage = () => {
   const changeStar = useCallback(() => setEvent(!event), [event]);
   const changeArray = useCallback((arr: ArrayVacancies[]) => setArray(arr), []);
   useSendFavor(dispatch, changeArray, event);
-  console.log(event);
 
   return (
     <main className={styles.main}>

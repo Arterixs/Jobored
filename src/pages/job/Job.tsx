@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { CardJob } from 'components/card-job/Card-job';
@@ -12,7 +12,6 @@ import styles from './job.module.css';
 
 export const Job = () => {
   const [obj, setArray] = useState<ArrayVacancies>();
-  const changeArray = useCallback((arr: ArrayVacancies) => setArray({ ...arr }), []);
   const { dispatch } = UseErrorContext();
   const { pathname } = useLocation();
   const idVacancy = getIdVacancy(pathname);
