@@ -17,3 +17,15 @@ export const deleteIdFavorite = (id: number) => {
     localStorage.setItem('favorite', JSON.stringify(updateArray));
   }
 };
+
+export const getFavoriteParams = () => {
+  const data = localStorage.getItem('favorite');
+  if (data) {
+    const arr = JSON.parse(data) as number[];
+    if (arr.length) {
+      const stringParams = arr.map((item) => `&ids[]=${item}`).join('');
+      return `${stringParams}`;
+    }
+  }
+  return '';
+};

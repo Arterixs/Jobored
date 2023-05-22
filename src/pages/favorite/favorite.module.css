@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 1116px;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.wrapper {
+  max-width: 945px;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 773px;
+  width: 100%;
+  height: 100%;
+}
