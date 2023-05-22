@@ -26,6 +26,7 @@ export const MainPage = memo(({ funcSearch, funcPage }: MainPageProps) => {
                 salaryTo={item.payment_to}
                 currency={item.currency}
                 conditions={item.type_of_work.title}
+                id={item.id}
               />
             </CardWrapper>
           ))}

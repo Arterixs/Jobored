@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, SyntheticEvent } from 'react';
 import { TypeInput } from 'types/types/type-elem';
 import { ButtonClasses, CardWrapClasses, DropdownClasses, InputClasses } from '../enums/classes';
 
@@ -8,11 +8,12 @@ export interface CardWrapProps {
 }
 
 export interface ButtonProps {
-  onClick: () => void;
+  onClick: (e: SyntheticEvent) => void;
   children: JSX.Element;
   className: ButtonClasses | ButtonClasses[];
   flag?: boolean;
   disabled?: boolean;
+  star?: boolean;
 }
 
 export interface InputProps {

@@ -104,15 +104,6 @@
   transition: all 0.3s ease;
 }
 
-.btn_star {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
 .btn_pagination {
   width: 32px;
   height: 32px;
@@ -156,4 +147,27 @@
   cursor: pointer;
   transition: all 0.3s ease;
   color: var(--blue-600);
+}
+
+.btn_star {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--grey-500);
+  fill: none;
+}
+
+.btn_star:hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: var(--blue-400);
+}
+
+.btn_star-active {
+  transition: all 0.3s ease;
+  color: var(--blue-500-main);
+  fill: var(--blue-500-main);
 }

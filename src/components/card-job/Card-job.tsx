@@ -1,20 +1,25 @@
 import { Button } from 'components/common/button/Button';
 import { Svg } from 'components/common/svg-element/Svg';
+import { Star } from 'components/star/Star';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { SvgId } from 'types/enums/svg';
 import { CardJobProperty } from 'types/interface/context';
 import { getStringSaLary } from 'utils/helpers/main-page';
 import styles from './card-job.module.css';
 
-export const CardJob = ({ title, salaryFrom, salaryTo, currency, conditions, location }: CardJobProperty) => {
+export const CardJob = ({ title, salaryFrom, salaryTo, currency, conditions, location, id }: CardJobProperty) => {
   const salary = getStringSaLary(salaryFrom, salaryTo, currency);
   return (
-    <section className={styles.section}>
+    <section
+      className={styles.section}
+      onClick={() => console.log(`carta ${String(id)}`)}
+      role='button'
+      tabIndex={-1}
+      onKeyDown={() => {}}
+    >
       <div className={styles.wrap_title}>
         <h2 className={styles.title}>{title}</h2>
-        <Button className={ButtonClasses.BTN_STAR} onClick={() => {}}>
-          <Svg id={SvgId.STAR} className={SvgClasses.STAR} />
-        </Button>
+        <Star id={id} />
       </div>
       <div className={styles.wrap_description}>
         <span className={styles.salary}>{salary}</span>
