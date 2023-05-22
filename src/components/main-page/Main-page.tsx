@@ -1,6 +1,8 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
+import { Routers } from 'types/enums/router';
 import { Search } from 'components/common/search/Search';
 import { Pagination } from 'components/pagination/Pagination';
 import { useInfoContext } from 'hooks/use-info-context';
@@ -19,15 +21,17 @@ export const MainPage = memo(({ funcSearch, funcPage }: MainPageProps) => {
         <section className={styles.section}>
           {listVacancies.map((item) => (
             <CardWrapper className={CardWrapClasses.CARD} key={item.id}>
-              <CardJob
-                location={item.town.title}
-                title={item.profession}
-                salaryFrom={item.payment_from}
-                salaryTo={item.payment_to}
-                currency={item.currency}
-                conditions={item.type_of_work.title}
-                id={item.id}
-              />
+              <Link to={`${Routers.VACANCY_PAGE}/${item.id}`} className={styles.link}>
+                <CardJob
+                  location={item.town.title}
+                  title={item.profession}
+                  salaryFrom={item.payment_from}
+                  salaryTo={item.payment_to}
+                  currency={item.currency}
+                  conditions={item.type_of_work.title}
+                  id={item.id}
+                />
+              </Link>
             </CardWrapper>
           ))}
         </section>

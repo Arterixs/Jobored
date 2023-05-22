@@ -36,6 +36,7 @@ export const Dropdown = ({ className, activeOption, value, setValue }: DropDownP
         aria-controls='industryTypes'
         id='industry'
         tabIndex={-1}
+        data-elem='industry-select'
       >
         <span>{value}</span>
         {!value && <span className={styles.hint}>{InputText.DEFAULT}</span>}

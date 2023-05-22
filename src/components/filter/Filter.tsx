@@ -57,6 +57,7 @@ export const Filter = memo(({ funcRequest }: FilterProps) => {
               value={salaryFr}
               onChange={changeFr}
               placeholder={InputText.FROM}
+              data-elem='salary-from-input'
             />
             <div className={styles['wrapper-btn']}>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryFr, setSalaryFr, true)}>
@@ -74,6 +75,7 @@ export const Filter = memo(({ funcRequest }: FilterProps) => {
               value={salaryUp}
               onChange={changeUp}
               placeholder={InputText.UP}
+              data-elem='salary-to-input'
             />
             <div className={styles['wrapper-btn']}>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryUp, setSalaryUp, true)}>
@@ -85,7 +87,7 @@ export const Filter = memo(({ funcRequest }: FilterProps) => {
             </div>
           </Wrapper>
         </FiltBlock>
-        <Button onClick={applyClick} className={ButtonClasses.BTN_APPLY}>
+        <Button onClick={applyClick} className={ButtonClasses.BTN_APPLY} dataElem='search-button'>
           <span>{TextButton.APPLY}</span>
         </Button>
       </div>

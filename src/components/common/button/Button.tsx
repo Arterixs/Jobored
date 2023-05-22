@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import { ButtonProps } from 'types/interface/props';
 import styles from './button.module.css';
 
-export const Button = ({ onClick, children, className, flag, disabled, star }: ButtonProps) => {
+export const Button = ({ onClick, children, className, flag, disabled, star, dataElem }: ButtonProps) => {
   const isArray = Array.isArray(className);
   const classes = isArray ? clsx(...className.map((item) => styles[item])) : styles[className];
   return (
@@ -16,6 +16,7 @@ export const Button = ({ onClick, children, className, flag, disabled, star }: B
         [styles['btn_star-active']]: star,
       })}
       disabled={disabled}
+      data-elem={dataElem}
     >
       {children}
     </button>

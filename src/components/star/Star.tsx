@@ -9,6 +9,7 @@ import { deleteIdFavorite, setIdFavorite, checkIdFavorite } from 'utils/helpers/
 export const Star = ({ id, changeStar }: StarProps) => {
   const [active, setActive] = useState(() => checkIdFavorite(id));
   const handleClick = (e: SyntheticEvent) => {
+    e.preventDefault();
     e.stopPropagation();
     setActive(!active);
     if (active) {
@@ -19,7 +20,12 @@ export const Star = ({ id, changeStar }: StarProps) => {
     if (changeStar) changeStar();
   };
   return (
-    <Button className={ButtonClasses.BTN_STAR} onClick={handleClick} star={active}>
+    <Button
+      className={ButtonClasses.BTN_STAR}
+      onClick={handleClick}
+      star={active}
+      dataElem={`vacancy-${id}-shortlist-button`}
+    >
       <Svg id={SvgId.STAR} className={SvgClasses.STAR} />
     </Button>
   );

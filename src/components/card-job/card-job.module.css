@@ -4,6 +4,10 @@
   gap: 12.5px;
 }
 
+.section_job {
+  gap: 16px;
+}
+
 .wrap_title {
   display: flex;
   justify-content: space-between;
@@ -17,6 +21,13 @@
   color: var(--blue-500-main);
 }
 
+.title_job {
+  font-family: var(--font-bold);
+  color: inherit;
+  font-size: 28px;
+  line-height: 33.89px;
+}
+
 .wrap_description {
   display: flex;
   align-items: center;
@@ -24,8 +35,16 @@
   line-height: 21px;
 }
 
+.wrap_description_job {
+  font-size: 20px;
+}
+
 .salary {
   font-family: var(--font-semiBold);
+}
+
+.salary_job {
+  font-family: var(--font-bold);
 }
 
 .dot {

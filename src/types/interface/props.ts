@@ -5,6 +5,7 @@ import { ButtonClasses, CardWrapClasses, DropdownClasses, InputClasses } from '.
 export interface CardWrapProps {
   children: ReactNode;
   className: CardWrapClasses;
+  job?: boolean;
 }
 
 export interface ButtonProps {
@@ -14,6 +15,7 @@ export interface ButtonProps {
   flag?: boolean;
   disabled?: boolean;
   star?: boolean;
+  dataElem?: string;
 }
 
 export interface InputProps {

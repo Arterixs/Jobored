@@ -19,8 +19,9 @@ export const Search = ({ funcSearch }: SearchProps) => {
         placeholder={InputText.PLACEHOLDER_SEARCH}
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
+        data-elem='search-input'
       />
-      <Button onClick={handleClick} className={ButtonClasses.BTN_SEARCH}>
+      <Button onClick={handleClick} className={ButtonClasses.BTN_SEARCH} dataElem='search-button'>
         <span>{TextButton.SEARCH}</span>
       </Button>
       <Svg className={SvgClasses.SEARCH} id={SvgId.SEARCH} />

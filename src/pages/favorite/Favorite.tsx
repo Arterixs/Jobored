@@ -1,4 +1,6 @@
 import { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Routers } from 'types/enums/router';
 import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { CardWrapClasses } from 'types/enums/classes';
@@ -24,16 +26,18 @@ export const VacanciesPage = () => {
           <section className={styles.section}>
             {array.map((item) => (
               <CardWrapper className={CardWrapClasses.CARD} key={item.id}>
-                <CardJob
-                  location={item.town.title}
-                  title={item.profession}
-                  salaryFrom={item.payment_from}
-                  salaryTo={item.payment_to}
-                  currency={item.currency}
-                  conditions={item.type_of_work.title}
-                  id={item.id}
-                  changeStar={changeStar}
-                />
+                <Link to={`${Routers.FAVORITE_PAGE}/${item.id}`} className={styles.link}>
+                  <CardJob
+                    location={item.town.title}
+                    title={item.profession}
+                    salaryFrom={item.payment_from}
+                    salaryTo={item.payment_to}
+                    currency={item.currency}
+                    conditions={item.type_of_work.title}
+                    id={item.id}
+                    changeStar={changeStar}
+                  />
+                </Link>
               </CardWrapper>
             ))}
           </section>

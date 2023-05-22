@@ -6,7 +6,7 @@ import { Nav } from '../interface/nav';
 export type NavItemProps = Omit<Nav, 'id'>;
 
 export type SvgProps = { id: string; className: SvgClasses | SvgClasses[] };
-type ChangeFavorite = { changeStar?: () => void };
+type ChangeFavorite = { changeStar?: () => void; job?: boolean };
 
 export type SearchProps = Omit<MainPageProps, 'funcPage'>;
 export type PaginationProps = Omit<MainPageProps, 'funcSearch'>;
