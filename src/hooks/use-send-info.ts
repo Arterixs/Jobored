@@ -1,27 +1,25 @@
 import { useEffect, useRef } from 'react';
 import { sendReqJobs } from 'server/req-jobs';
-import { ActionCommon, ActionLoaded } from 'store/actions';
-import { ActionLoadInfo } from 'types/enums/actions';
+import { ActionLoad, ActionLoadInfo } from 'types/enums/actions';
 import { ActionReducerInfo, ActionsReducer } from 'types/types/actions';
+import { UseErrorContext } from './use-loaded-context';
 
-export const useSendInformation = (
-  dispatchServer: React.Dispatch<ActionsReducer>,
-  dispatch: React.Dispatch<ActionReducerInfo>
-) => {
+export const useSendInformation = (dispatch: React.Dispatch<ActionReducerInfo>) => {
+  const dispatchServer = UseErrorContext().dispatch;
   const ref = useRef(true);
   useEffect(() => {
     if (ref.current) {
-      dispatchServer(ActionLoaded(false));
+      dispatchServer({ type: ActionLoad.START, payload: 1 });
       sendReqJobs()
         .then((result) => {
           dispatch({
             type: ActionLoadInfo.SET_DIRECT_INDUSTRY,
             payload: result,
           });
-          dispatchServer(ActionLoaded(true));
+          dispatchServer({ type: ActionLoad.END, payload: 1 });
         })
         .catch(() => {
-          dispatchServer(ActionCommon(true));
+          dispatchServer({ type: ActionLoad.ERROR, payload: true });
         });
     }
     ref.current = false;

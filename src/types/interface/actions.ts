@@ -6,13 +6,18 @@ export interface ActionError {
   payload: boolean;
 }
 
-export interface ActionLoaded {
-  type: ActionLoad.LOADED;
-  payload: boolean;
+export interface ActionStart {
+  type: ActionLoad.START;
+  payload: number;
+}
+
+export interface ActionEnd {
+  type: ActionLoad.END;
+  payload: number;
 }
 
 export interface ActionCommon {
-  type: ActionLoad.COMMON;
+  type: ActionLoad.ERROR;
   payload: boolean;
 }
 

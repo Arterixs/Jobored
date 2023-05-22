@@ -16,3 +16,8 @@ export interface StateDataRequest {
   filter: string;
   search: string;
 }
+
+export interface Store {
+  error: boolean;
+  countLoaders: number;
+}

@@ -1,10 +1,9 @@
-import { UseErrorContext } from 'hooks/use-loaded-context';
-import { ActionErrorLoad } from 'store/actions';
+import { useState } from 'react';
 import { ErrorMessage } from './Error-message';
 
 export const ErrorWrap = () => {
-  const { dispatch, state } = UseErrorContext();
-  const handleClick = () => dispatch(ActionErrorLoad(false));
+  const [state, updateState] = useState(true);
+  const handleClick = () => updateState(!state);
 
-  return <ErrorMessage state={state.error} handleClick={handleClick} />;
+  return <ErrorMessage state={state} handleClick={handleClick} />;
 };

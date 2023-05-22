@@ -31,5 +31,5 @@
       "data/*": ["data/*"]
     }
   },
-  "include": [".eslintrc", "src"]
+  "include": ["src", "config", ".eslintrc", "./*.js", "./*.ts"]
 }

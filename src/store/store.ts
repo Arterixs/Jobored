@@ -1,4 +1,4 @@
 export const store = {
   error: false,
-  load: true,
+  countLoaders: 0,
 };

@@ -1,5 +1,5 @@
 import { ActionLoad } from 'types/enums/actions';
-import { Store } from 'types/interface/store';
+import { Store } from 'types/interface/states';
 import { ActionsReducer } from 'types/types/actions';
 
 export const reducer = (state: Store, action: ActionsReducer) => {
@@ -7,10 +7,12 @@ export const reducer = (state: Store, action: ActionsReducer) => {
   switch (type) {
     case ActionLoad.ERROR_LOAD:
       return { ...state, error: payload };
-    case ActionLoad.LOADED:
-      return { ...state, load: payload };
-    case ActionLoad.COMMON:
-      return { ...state, error: payload, load: payload };
+    case ActionLoad.START:
+      return { ...state, countLoaders: state.countLoaders + payload };
+    case ActionLoad.END:
+      return { ...state, countLoaders: state.countLoaders - payload };
+    case ActionLoad.ERROR:
+      return { ...state, error: payload, countLoaders: state.countLoaders - 1 };
     default:
       return state;
   }

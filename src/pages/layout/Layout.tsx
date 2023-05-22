@@ -8,20 +8,21 @@ import { useMemo, useReducer } from 'react';
 import { reducer } from 'store/reducer';
 import { store } from 'store/store';
 import { Context } from 'context/context-api';
+import { ErrorPage } from 'pages/error/Error';
 import styles from './layout.module.css';
 
 export const Layout = () => {
   const [state, dispatch] = useReducer(reducer, store);
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
-  useSendAuth(dispatch);
+  // useSendAuth(dispatch);
+  const flagLoader = Boolean(state.countLoaders);
+  console.log(state);
   return (
     <div className={styles.wrapper}>
       <Context.Provider value={contextValue}>
-        {!state.load && <Loader />}
+        {flagLoader && <Loader />}
         <Header />
-        <div className={styles.container}>
-          <Outlet />
-        </div>
+        <div className={styles.container}>{state.error ? <ErrorPage /> : <Outlet />}</div>
       </Context.Provider>
       <Footer />
       <Sprite />

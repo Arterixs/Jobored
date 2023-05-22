@@ -1,7 +1,6 @@
 import { ActionReducerInfo, ActionsReducer } from 'types/types/actions';
 import { Nav } from './nav';
-import { StateInfo } from './states';
-import { Store } from './store';
+import { StateInfo, Store } from './states';
 
 export interface ContextData {
   navigation: Nav[];

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { sendReqJob } from 'server/req-job';
-import { ActionCommon, ActionLoaded } from 'store/actions';
+import { ActionLoad } from 'types/enums/actions';
 import { ArrayVacancies } from 'types/interface/server';
 import { ActionsReducer } from 'types/types/actions';
 
@@ -12,14 +12,14 @@ export const useSendJob = (
   const myRef = useRef(true);
   useEffect(() => {
     if (myRef.current) {
-      dispatchServer(ActionLoaded(false));
+      dispatchServer({ type: ActionLoad.START, payload: 1 });
       sendReqJob(id)
         .then((result) => {
           setState(result);
-          dispatchServer(ActionLoaded(true));
+          dispatchServer({ type: ActionLoad.END, payload: 1 });
         })
         .catch(() => {
-          dispatchServer(ActionCommon(true));
+          dispatchServer({ type: ActionLoad.ERROR, payload: true });
         });
     }
     myRef.current = false;

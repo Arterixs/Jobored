@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { sendReqVacansy } from 'server/req-vacansy';
-import { ActionCommon, ActionLoaded } from 'store/actions';
+import { ActionLoad } from 'types/enums/actions';
 import { ArrayVacancies } from 'types/interface/server';
 import { ActionsReducer } from 'types/types/actions';
 import { getFavoriteParams } from 'utils/helpers/favorite';
@@ -18,14 +18,14 @@ export const useSendFavor = (
         setState([]);
         return;
       }
-      dispatchServer(ActionLoaded(false));
+      dispatchServer({ type: ActionLoad.START, payload: 1 });
       sendReqVacansy(queryParams)
         .then((result) => {
           setState(result);
-          dispatchServer(ActionLoaded(true));
+          dispatchServer({ type: ActionLoad.END, payload: 1 });
         })
         .catch(() => {
-          dispatchServer(ActionCommon(true));
+          dispatchServer({ type: ActionLoad.ERROR, payload: true });
         });
     }
     myRef.current = true;

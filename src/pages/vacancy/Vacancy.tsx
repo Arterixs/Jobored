@@ -16,13 +16,11 @@ export const Vacancy = () => {
   const [state, dispatch] = useReducer(reducerInfo, stateInfo);
   const [stateSend, setState] = useState(stateVacancyPage);
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
-  const dispatchServer = UseErrorContext().dispatch;
-
   const setFilterRequest = useCallback((value: string) => setState({ ...stateSend, filter: value }), [stateSend]);
   const setPageRequest = useCallback((value: string) => setState({ ...stateSend, pageBtn: value }), [stateSend]);
   const setSearchRequest = useCallback((value: string) => setState({ ...stateSend, search: value }), [stateSend]);
-  useSendInformation(dispatchServer, dispatch);
-  useSendVacancies(dispatchServer, dispatch, stateSend);
+  useSendInformation(dispatch);
+  useSendVacancies(dispatch, stateSend);
 
   return (
     <main className={styles.main}>

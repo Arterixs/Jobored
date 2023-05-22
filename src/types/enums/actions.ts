@@ -1,7 +1,9 @@
 export const enum ActionLoad {
   ERROR_LOAD = 'ERROR_LOAD',
-  LOADED = 'LOAD',
+  START = 'LOAD',
+  END = 'END',
   COMMON = 'COMMON',
+  ERROR = 'ERROR',
 }
 
 export const enum ActionLoadInfo {

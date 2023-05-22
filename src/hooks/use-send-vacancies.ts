@@ -1,31 +1,28 @@
 import { useEffect, useRef } from 'react';
 import { sendReqVacansy } from 'server/req-vacansy';
-import { ActionCommon, ActionLoaded } from 'store/actions';
-import { ActionLoadInfo } from 'types/enums/actions';
+import { ActionLoad, ActionLoadInfo } from 'types/enums/actions';
 import { StateDataRequest } from 'types/interface/states';
-import { ActionReducerInfo, ActionsReducer } from 'types/types/actions';
+import { ActionReducerInfo } from 'types/types/actions';
 import { convertQueryParams } from 'utils/helpers/main-page';
+import { UseErrorContext } from './use-loaded-context';
 
-export const useSendVacancies = (
-  dispatchServer: React.Dispatch<ActionsReducer>,
-  dispatch: React.Dispatch<ActionReducerInfo>,
-  state: StateDataRequest
-) => {
+export const useSendVacancies = (dispatch: React.Dispatch<ActionReducerInfo>, state: StateDataRequest) => {
+  const dispatchServer = UseErrorContext().dispatch;
   const myRef = useRef(true);
   useEffect(() => {
     if (myRef.current) {
       const queryParams = convertQueryParams(state);
-      dispatchServer(ActionLoaded(false));
+      dispatchServer({ type: ActionLoad.START, payload: 1 });
       sendReqVacansy(queryParams)
         .then((result) => {
           dispatch({
             type: ActionLoadInfo.SET_LIST_VACANCIES,
             payload: result,
           });
-          dispatchServer(ActionLoaded(true));
+          dispatchServer({ type: ActionLoad.END, payload: 1 });
         })
         .catch(() => {
-          dispatchServer(ActionCommon(true));
+          dispatchServer({ type: ActionLoad.ERROR, payload: true });
         });
       myRef.current = false;
     }

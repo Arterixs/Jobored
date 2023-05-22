@@ -1,19 +1,19 @@
 import { useEffect, useRef } from 'react';
 import { senReqAuth } from 'server/req-auth';
-import { ActionCommon, ActionLoaded } from 'store/actions';
+import { ActionLoad } from 'types/enums/actions';
 import { ActionsReducer } from 'types/types/actions';
 
 export const useSendAuth = (dispatch: React.Dispatch<ActionsReducer>) => {
   const ref = useRef(true);
   useEffect(() => {
     if (ref.current) {
-      dispatch(ActionLoaded(false));
+      dispatch({ type: ActionLoad.START, payload: 1 });
       senReqAuth()
         .then(() => {
-          dispatch(ActionLoaded(true));
+          dispatch({ type: ActionLoad.END, payload: 1 });
         })
         .catch(() => {
-          dispatch(ActionCommon(true));
+          dispatch({ type: ActionLoad.ERROR, payload: true });
         });
     }
     ref.current = false;

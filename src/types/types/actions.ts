@@ -1,4 +1,11 @@
-import { ActionCommon, ActionError, ActionIndustry, ActionLoaded, ActionVacancies } from 'types/interface/actions';
+import {
+  ActionCommon,
+  ActionEnd,
+  ActionError,
+  ActionIndustry,
+  ActionStart,
+  ActionVacancies,
+} from 'types/interface/actions';
 
-export type ActionsReducer = ActionError | ActionLoaded | ActionCommon;
+export type ActionsReducer = ActionError | ActionStart | ActionEnd | ActionCommon;
 export type ActionReducerInfo = ActionIndustry | ActionVacancies;

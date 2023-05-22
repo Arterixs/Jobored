@@ -1,0 +1,19 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.section {
+  position: relative;
+  max-width: 1116px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  object-fit: contain;
+}
