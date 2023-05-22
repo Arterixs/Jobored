@@ -29,3 +29,8 @@ export interface DropDownProps {
   activeOption: React.MutableRefObject<number>;
   setValue: (value: string, key: string) => void;
 }
+
+export interface MainPageProps {
+  funcSearch: (value: string) => void;
+  funcPage: (value: string) => void;
+}

@@ -11,11 +11,9 @@ import styles from './dropdown.module.css';
 
 export const Dropdown = ({ className, activeOption, value, setValue }: DropDownProps) => {
   const [state, setState] = useState(false);
-
   const {
     state: { directoryIndustry },
   } = useInfoContext();
-
   const classMenu = clsx({
     [styles.menu]: true,
     [styles.menu_hidden]: !state,

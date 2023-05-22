@@ -9,3 +9,17 @@ export const clickNumArrow = (value: string, setter: (s: string) => void, direct
     setter('');
   }
 };
+
+export const convertSendString = (salaryFrom: string, salaryTo: string, valueJob: string) => {
+  let result = '';
+  if (salaryFrom) {
+    result += `&payment_from=${salaryFrom}`;
+  }
+  if (salaryTo) {
+    result += `&payment_to=${salaryTo}`;
+  }
+  if (valueJob) {
+    result += `&catalogues=${valueJob}`;
+  }
+  return result;
+};

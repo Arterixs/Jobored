@@ -1,7 +1,7 @@
 import { memo, useRef, useState } from 'react';
 import { Button } from 'components/common/button/Button';
 import { Svg } from 'components/common/svg-element/Svg';
-import { clickNumArrow } from 'utils/helpers/filter';
+import { clickNumArrow, convertSendString } from 'utils/helpers/filter';
 import { Dropdown } from 'components/common/dropdown/Dropdown';
 import { Input } from 'components/common/input/Input';
 import { Wrapper } from 'components/common/component-wrapper/Wrapper';
@@ -9,24 +9,11 @@ import { InputText, TextButton } from 'types/enums/text';
 import { ButtonClasses, DropdownClasses, InputClasses, SvgClasses } from 'types/enums/classes';
 import { MagicNumbers } from 'types/enums/magic-numbers';
 import { SvgId } from 'types/enums/svg';
+import { FilterProps } from 'types/types/props';
 import { FiltBlock } from './Filt-block';
 import styles from './filter.module.css';
 
-const isValid = (salaryFrom: string, salaryTo: string, valueJob: string) => {
-  let result = '';
-  if (salaryFrom) {
-    result += `&payment_from=${salaryFrom}`;
-  }
-  if (salaryTo) {
-    result += `&payment_to=${salaryTo}`;
-  }
-  if (valueJob) {
-    result += `&catalogues=${valueJob}`;
-  }
-  return result;
-};
-
-export const Filter = memo(({ funcRequest }: { funcRequest: (value: string) => void }) => {
+export const Filter = memo(({ funcRequest }: FilterProps) => {
   const [valueJob, setValueJob] = useState({ value: '', key: '' });
   const [salaryFr, setSalaryFr] = useState('');
   const [salaryUp, setSalaryUp] = useState('');
@@ -40,7 +27,7 @@ export const Filter = memo(({ funcRequest }: { funcRequest: (value: string) => v
     setSalaryUp('');
   };
   const choiseOption = (value: string, key: string) => setValueJob({ value, key });
-  const applyClick = () => funcRequest(isValid(salaryFr, salaryUp, valueJob.key));
+  const applyClick = () => funcRequest(convertSendString(salaryFr, salaryUp, valueJob.key));
 
   return (
     <section className={styles.filter}>

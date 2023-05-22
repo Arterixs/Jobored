@@ -8,25 +8,19 @@ import { ContextInfo } from 'context/context-api';
 import { useSendInformation } from 'hooks/use-send-info';
 import { stateInfo } from 'store/states/state-info';
 import { reducerInfo } from 'store/reducers/reducer-info';
+import { stateVacancyPage } from 'data/local-state';
 import { useSendVacancies } from 'hooks/use-send-vacancies';
 import styles from './vacancy.module.css';
 
-const obj = {
-  pageBtn: '0',
-  filter: '',
-  search: '',
-};
-
 export const Vacancy = () => {
   const [state, dispatch] = useReducer(reducerInfo, stateInfo);
-  const [stateSend, setState] = useState(obj);
+  const [stateSend, setState] = useState(stateVacancyPage);
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
   const dispatchServer = UseErrorContext().dispatch;
 
   const setFilterRequest = useCallback((value: string) => setState({ ...stateSend, filter: value }), [stateSend]);
   const setPageRequest = useCallback((value: string) => setState({ ...stateSend, pageBtn: value }), [stateSend]);
   const setSearchRequest = useCallback((value: string) => setState({ ...stateSend, search: value }), [stateSend]);
-  console.log('render page');
   useSendInformation(dispatchServer, dispatch);
   useSendVacancies(dispatchServer, dispatch, stateSend);
 

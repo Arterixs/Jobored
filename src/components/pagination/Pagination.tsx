@@ -5,10 +5,11 @@ import { useDataContext } from 'hooks/use-data-context';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { MagicNumbers } from 'types/enums/magic-numbers';
 import { SvgId } from 'types/enums/svg';
+import { PaginationProps } from 'types/types/props';
 import { ARRAY_BTN_PAGE } from 'utils/constants/magic-number';
 import styles from './pagination.module.css';
 
-export const Pagination = ({ funcPage }: { funcPage: (value: string) => void }) => {
+export const Pagination = ({ funcPage }: PaginationProps) => {
   const [amountBtn, setBtn] = useState(ARRAY_BTN_PAGE);
   const [currentPage, setCurrentPage] = useState(MagicNumbers.ONE);
   const [disabledLeft, setDisabledLeft] = useState(true);
@@ -38,11 +39,11 @@ export const Pagination = ({ funcPage }: { funcPage: (value: string) => void }) 
         setDisabledLeft(true);
       }
     }
-    funcPage(`${nextPage - 1}`);
+    funcPage(`${nextPage - MagicNumbers.ONE}`);
   };
   const handleClick = (numberPage: number) => {
     setCurrentPage(numberPage);
-    funcPage(`${numberPage - 1}`);
+    funcPage(`${numberPage - MagicNumbers.ONE}`);
   };
 
   return (
