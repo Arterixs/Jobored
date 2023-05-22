@@ -1,5 +1,5 @@
-import { CardJob } from 'components/card-job/Card-job';
 import { useCallback, useState } from 'react';
+import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { CardWrapClasses } from 'types/enums/classes';
 import { ArrayVacancies } from 'types/interface/server';
@@ -10,9 +10,12 @@ import styles from './favorite.module.css';
 
 export const VacanciesPage = () => {
   const [array, setArray] = useState<ArrayVacancies[]>([]);
+  const [event, setEvent] = useState(false);
   const { dispatch } = UseErrorContext();
+  const changeStar = useCallback(() => setEvent(!event), [event]);
   const changeArray = useCallback((arr: ArrayVacancies[]) => setArray(arr), []);
-  useSendFavor(dispatch, changeArray);
+  useSendFavor(dispatch, changeArray, event);
+  console.log(event);
 
   return (
     <main className={styles.main}>
@@ -29,6 +32,7 @@ export const VacanciesPage = () => {
                   currency={item.currency}
                   conditions={item.type_of_work.title}
                   id={item.id}
+                  changeStar={changeStar}
                 />
               </CardWrapper>
             ))}

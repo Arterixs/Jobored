@@ -7,14 +7,17 @@ import { getFavoriteParams } from 'utils/helpers/favorite';
 
 export const useSendFavor = (
   dispatchServer: React.Dispatch<ActionsReducer>,
-  setState: (arr: ArrayVacancies[]) => void
+  setState: (arr: ArrayVacancies[]) => void,
+  event: boolean
 ) => {
   const myRef = useRef(false);
   useEffect(() => {
     if (myRef.current) {
       const queryParams = getFavoriteParams();
-      if (!queryParams) return;
-      console.log('Работает', queryParams);
+      if (!queryParams) {
+        setState([]);
+        return;
+      }
       dispatchServer(ActionLoaded(false));
       sendReqVacansy(queryParams)
         .then((result) => {
@@ -26,5 +29,5 @@ export const useSendFavor = (
         });
     }
     myRef.current = true;
-  }, [dispatchServer, setState]);
+  }, [dispatchServer, setState, event]);
 };

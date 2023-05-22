@@ -4,10 +4,10 @@ import { Svg } from 'components/common/svg-element/Svg';
 import { ButtonClasses, SvgClasses } from 'types/enums/classes';
 import { SvgId } from 'types/enums/svg';
 import { StarProps } from 'types/types/props';
-import { deleteIdFavorite, setIdFavorite } from 'utils/helpers/favorite';
+import { deleteIdFavorite, setIdFavorite, checkIdFavorite } from 'utils/helpers/favorite';
 
-export const Star = ({ id }: StarProps) => {
-  const [active, setActive] = useState(false);
+export const Star = ({ id, changeStar }: StarProps) => {
+  const [active, setActive] = useState(() => checkIdFavorite(id));
   const handleClick = (e: SyntheticEvent) => {
     e.stopPropagation();
     setActive(!active);
@@ -16,6 +16,7 @@ export const Star = ({ id }: StarProps) => {
     } else {
       setIdFavorite(id);
     }
+    if (changeStar) changeStar();
   };
   return (
     <Button className={ButtonClasses.BTN_STAR} onClick={handleClick} star={active}>

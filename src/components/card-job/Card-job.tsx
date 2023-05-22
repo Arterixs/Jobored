@@ -1,13 +1,12 @@
-import { Button } from 'components/common/button/Button';
 import { Svg } from 'components/common/svg-element/Svg';
 import { Star } from 'components/star/Star';
-import { ButtonClasses, SvgClasses } from 'types/enums/classes';
+import { SvgClasses } from 'types/enums/classes';
 import { SvgId } from 'types/enums/svg';
-import { CardJobProperty } from 'types/interface/context';
+import { CardProps } from 'types/types/props';
 import { getStringSaLary } from 'utils/helpers/main-page';
 import styles from './card-job.module.css';
 
-export const CardJob = ({ title, salaryFrom, salaryTo, currency, conditions, location, id }: CardJobProperty) => {
+export const CardJob = ({ title, salaryFrom, salaryTo, currency, conditions, location, id, changeStar }: CardProps) => {
   const salary = getStringSaLary(salaryFrom, salaryTo, currency);
   return (
     <section
@@ -19,7 +18,7 @@ export const CardJob = ({ title, salaryFrom, salaryTo, currency, conditions, loc
     >
       <div className={styles.wrap_title}>
         <h2 className={styles.title}>{title}</h2>
-        <Star id={id} />
+        <Star id={id} changeStar={changeStar} />
       </div>
       <div className={styles.wrap_description}>
         <span className={styles.salary}>{salary}</span>

@@ -6,8 +6,10 @@ import { Nav } from '../interface/nav';
 export type NavItemProps = Omit<Nav, 'id'>;
 
 export type SvgProps = { id: string; className: SvgClasses | SvgClasses[] };
+type ChangeFavorite = { changeStar?: () => void };
 
 export type SearchProps = Omit<MainPageProps, 'funcPage'>;
 export type PaginationProps = Omit<MainPageProps, 'funcSearch'>;
 export type FilterProps = { funcRequest: (value: string) => void };
-export type StarProps = Pick<CardJobProperty, 'id'>;
+export type StarProps = Pick<CardJobProperty, 'id'> & ChangeFavorite;
+export type CardProps = CardJobProperty & ChangeFavorite;

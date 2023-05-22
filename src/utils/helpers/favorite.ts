@@ -29,3 +29,15 @@ export const getFavoriteParams = () => {
   }
   return '';
 };
+
+export const checkIdFavorite = (id: number) => {
+  const data = localStorage.getItem('favorite');
+  if (data) {
+    const array = JSON.parse(data) as number[];
+    const isCheckId = array.find((item) => item === id);
+    if (isCheckId) {
+      return true;
+    }
+  }
+  return false;
+};
