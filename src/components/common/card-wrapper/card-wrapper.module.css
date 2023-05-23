@@ -16,5 +16,6 @@
 }
 
 .job {
-  height: 157px;
+  min-height: 157px;
+  position: relative;
 }

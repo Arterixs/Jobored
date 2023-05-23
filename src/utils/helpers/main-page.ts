@@ -1,14 +1,14 @@
 import { StateDataRequest } from 'types/interface/states';
 
 export const getStringSaLary = (salaryFrom: number, salaryTo: number, currency: string) => {
+  if (!salaryTo && !salaryFrom) {
+    return `з/п по договорённости`;
+  }
   if (salaryFrom === salaryTo) {
     return `з/п ${salaryFrom} ${currency}`;
   }
   if (salaryTo && salaryFrom) {
     return `з/п ${salaryFrom} - ${salaryTo} ${currency}`;
-  }
-  if (!salaryTo && !salaryFrom) {
-    return `з/п по договорённости`;
   }
   if (salaryTo) {
     return `з/п от ${salaryTo} ${currency}`;
