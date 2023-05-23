@@ -16,7 +16,6 @@ export const Layout = () => {
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
   // useSendAuth(dispatch);
   const flagLoader = Boolean(state.countLoaders);
-  console.log(state);
   return (
     <div className={styles.wrapper}>
       <Context.Provider value={contextValue}>

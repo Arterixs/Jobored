@@ -1,0 +1,22 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 330px;
+}
+
+.text {
+  font-family: var(--font-bold);
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--btn-find);
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}

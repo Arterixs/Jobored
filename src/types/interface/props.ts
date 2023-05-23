@@ -1,6 +1,7 @@
 import { ReactNode, SyntheticEvent } from 'react';
 import { TypeInput } from 'types/types/type-elem';
 import { ButtonClasses, CardWrapClasses, DropdownClasses, InputClasses } from '../enums/classes';
+import { ArrayVacancies } from './server';
 
 export interface CardWrapProps {
   children: ReactNode;
@@ -36,4 +37,5 @@ export interface DropDownProps {
 export interface MainPageProps {
   funcSearch: (value: string) => void;
   funcPage: (value: string) => void;
+  listVacancies: ArrayVacancies[];
 }

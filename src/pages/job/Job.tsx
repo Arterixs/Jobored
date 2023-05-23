@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import parse from 'html-react-parser';
 import { CardJob } from 'components/card-job/Card-job';
 import { getIdVacancy } from 'utils/helpers/job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
@@ -8,6 +7,7 @@ import { UseErrorContext } from 'hooks/use-loaded-context';
 import { useSendJob } from 'hooks/use-send-job';
 import { CardWrapClasses } from 'types/enums/classes';
 import { ArrayVacancies } from 'types/interface/server';
+import parse from 'html-react-parser';
 import styles from './job.module.css';
 
 export const Job = () => {

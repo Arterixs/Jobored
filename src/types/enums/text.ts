@@ -2,6 +2,12 @@ export const enum TextButton {
   RESET = 'Сбросить всё',
   APPLY = 'Применить',
   SEARCH = 'Поиск',
+  EMPTY = 'Поиск Вакансий',
+}
+
+export const enum TextContent {
+  EMPTY = 'Упс, здесь еще ничего нет!',
+  SEARCH = 'По вашему запросу ничего не найдено',
 }
 
 export const enum InputText {

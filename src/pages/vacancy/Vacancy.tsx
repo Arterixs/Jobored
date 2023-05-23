@@ -3,7 +3,6 @@ import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { Filter } from 'components/filter/Filter';
 import { MainPage } from 'components/main-page/Main-page';
 import { CardWrapClasses } from 'types/enums/classes';
-import { UseErrorContext } from 'hooks/use-loaded-context';
 import { ContextInfo } from 'context/context-api';
 import { useSendInformation } from 'hooks/use-send-info';
 import { stateInfo } from 'store/states/state-info';
@@ -28,7 +27,7 @@ export const Vacancy = () => {
         <CardWrapper className={CardWrapClasses.FILTER}>
           <Filter funcRequest={setFilterRequest} />
         </CardWrapper>
-        <MainPage funcSearch={setSearchRequest} funcPage={setPageRequest} />
+        <MainPage funcSearch={setSearchRequest} funcPage={setPageRequest} listVacancies={state.listVacancies} />
       </ContextInfo.Provider>
     </main>
   );

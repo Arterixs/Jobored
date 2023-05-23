@@ -171,3 +171,24 @@
   color: var(--blue-500-main);
   fill: var(--blue-500-main);
 }
+
+.btn_find {
+  width: 164px;
+  height: 42px;
+  background-color: var(--blue-100);
+  color: var(--blue-600);
+  font-family: var(--font-semiBold);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn_find:hover,
+.btn_find:focus-visible {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--blue-200);
+}
+
+.btn_find:active {
+  background-color: var(--blue-300);
+}

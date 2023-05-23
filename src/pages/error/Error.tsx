@@ -1,5 +1,5 @@
 import { ErrorWrap } from 'components/common/error-message/Error-wrap';
-import balloon from '../../assets/png/balloon.png';
+import balloon from 'assets/png/balloon.png';
 import styles from './empty.module.css';
 
 export const ErrorPage = () => (
