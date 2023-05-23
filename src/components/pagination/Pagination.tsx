@@ -41,6 +41,7 @@ export const Pagination = ({ funcPage }: PaginationProps) => {
     }
     funcPage(`${nextPage - MagicNumbers.ONE}`);
   };
+
   const handleClick = (numberPage: number) => {
     setCurrentPage(numberPage);
     funcPage(`${numberPage - MagicNumbers.ONE}`);

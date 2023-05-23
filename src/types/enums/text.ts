@@ -8,6 +8,7 @@ export const enum TextButton {
 export const enum TextContent {
   EMPTY = 'Упс, здесь еще ничего нет!',
   SEARCH = 'По вашему запросу ничего не найдено',
+  TITLE = 'Jobored',
 }
 
 export const enum InputText {

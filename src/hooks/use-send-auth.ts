@@ -7,6 +7,9 @@ export const useSendAuth = (dispatch: React.Dispatch<ActionsReducer>) => {
   const ref = useRef(true);
   useEffect(() => {
     if (ref.current) {
+      if (localStorage.getItem('favorite')) {
+        return;
+      }
       dispatch({ type: ActionLoad.START, payload: 1 });
       senReqAuth()
         .then(() => {

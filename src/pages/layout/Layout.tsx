@@ -5,16 +5,16 @@ import { Footer } from 'components/footer/footer';
 import { useSendAuth } from 'hooks/use-send-auth';
 import { Header } from 'components/header/Header';
 import { useMemo, useReducer } from 'react';
-import { reducer } from 'store/reducer';
-import { store } from 'store/store';
+import { reducerNet } from 'store/reducers/reducer-net';
+import { stateNet } from 'store/states/state-net';
 import { Context } from 'context/context-api';
 import { ErrorPage } from 'pages/error/Error';
 import styles from './layout.module.css';
 
 export const Layout = () => {
-  const [state, dispatch] = useReducer(reducer, store);
+  const [state, dispatch] = useReducer(reducerNet, stateNet);
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
-  // useSendAuth(dispatch);
+  useSendAuth(dispatch);
   const flagLoader = Boolean(state.countLoaders);
   return (
     <div className={styles.wrapper}>

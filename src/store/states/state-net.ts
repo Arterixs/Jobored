@@ -1,4 +1,4 @@
-export const store = {
+export const stateNet = {
   error: false,
   countLoaders: 0,
 };

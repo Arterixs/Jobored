@@ -2,7 +2,7 @@ import { ActionLoad } from 'types/enums/actions';
 import { Store } from 'types/interface/states';
 import { ActionsReducer } from 'types/types/actions';
 
-export const reducer = (state: Store, action: ActionsReducer) => {
+export const reducerNet = (state: Store, action: ActionsReducer) => {
   const { type, payload } = action;
   switch (type) {
     case ActionLoad.ERROR_LOAD:
