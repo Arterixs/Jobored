@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
 import { senReqAuth } from 'server/req-auth';
 import { ActionLoad } from 'types/enums/actions';
+import { LocalStorage } from 'types/enums/server';
 import { ActionsReducer } from 'types/types/actions';
 
 export const useSendAuth = (dispatch: React.Dispatch<ActionsReducer>) => {
   const ref = useRef(true);
   useEffect(() => {
     if (ref.current) {
-      if (localStorage.getItem('favorite')) {
+      if (localStorage.getItem(LocalStorage.TOKEN)) {
         return;
       }
       dispatch({ type: ActionLoad.START, payload: 1 });

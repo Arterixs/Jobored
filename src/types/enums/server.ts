@@ -8,6 +8,7 @@ export const enum UserAuthData {
 
 export const enum LocalStorage {
   TOKEN = 'tokenAcces',
+  FAVORITE = 'favorite',
 }
 
 export const enum ServerCodeResponse {

@@ -1,25 +1,27 @@
+import { LocalStorage } from 'types/enums/server';
+
 export const setIdFavorite = (id: number) => {
-  const data = localStorage.getItem('favorite');
+  const data = localStorage.getItem(LocalStorage.FAVORITE);
   if (data) {
     const array = JSON.parse(data) as number[];
     array.push(id);
-    localStorage.setItem('favorite', JSON.stringify(array));
+    localStorage.setItem(LocalStorage.FAVORITE, JSON.stringify(array));
     return;
   }
-  localStorage.setItem('favorite', JSON.stringify([id]));
+  localStorage.setItem(LocalStorage.FAVORITE, JSON.stringify([id]));
 };
 
 export const deleteIdFavorite = (id: number) => {
-  const data = localStorage.getItem('favorite');
+  const data = localStorage.getItem(LocalStorage.FAVORITE);
   if (data) {
     const array = JSON.parse(data) as number[];
     const updateArray = array.filter((item) => item !== id);
-    localStorage.setItem('favorite', JSON.stringify(updateArray));
+    localStorage.setItem(LocalStorage.FAVORITE, JSON.stringify(updateArray));
   }
 };
 
 export const getFavoriteParams = () => {
-  const data = localStorage.getItem('favorite');
+  const data = localStorage.getItem(LocalStorage.FAVORITE);
   if (data) {
     const arr = JSON.parse(data) as number[];
     if (arr.length) {
@@ -31,7 +33,7 @@ export const getFavoriteParams = () => {
 };
 
 export const checkIdFavorite = (id: number) => {
-  const data = localStorage.getItem('favorite');
+  const data = localStorage.getItem(LocalStorage.FAVORITE);
   if (data) {
     const array = JSON.parse(data) as number[];
     const isCheckId = array.find((item) => item === id);
