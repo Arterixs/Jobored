@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Jobored-Paralect/static/css/main.704e2504.css",
-    "main.js": "/Jobored-Paralect/static/js/main.e1a5e5a6.js",
+    "main.js": "/Jobored-Paralect/static/js/main.79213a8d.js",
     "static/media/Inter-Bold.ttf": "/Jobored-Paralect/static/media/Inter-Bold.9aab1ebe6bd16660e37e.ttf",
     "static/media/Inter-SemiBold.ttf": "/Jobored-Paralect/static/media/Inter-SemiBold.1616d5720720a412cfc8.ttf",
     "static/media/Inter-Medium.ttf": "/Jobored-Paralect/static/media/Inter-Medium.9d1fd4235eeb376c5f96.ttf",
@@ -24,10 +24,10 @@
     "static/media/Poppins-Regular.woff2": "/Jobored-Paralect/static/media/Poppins-Regular.67f2fd4268f7337f5c63.woff2",
     "index.html": "/Jobored-Paralect/index.html",
     "main.704e2504.css.map": "/Jobored-Paralect/static/css/main.704e2504.css.map",
-    "main.e1a5e5a6.js.map": "/Jobored-Paralect/static/js/main.e1a5e5a6.js.map"
+    "main.79213a8d.js.map": "/Jobored-Paralect/static/js/main.79213a8d.js.map"
   },
   "entrypoints": [
     "static/css/main.704e2504.css",
-    "static/js/main.e1a5e5a6.js"
+    "static/js/main.79213a8d.js"
   ]
 }
