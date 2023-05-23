@@ -17,6 +17,7 @@ export interface ButtonProps {
   disabled?: boolean;
   star?: boolean;
   dataElem?: string;
+  burgerState?: boolean;
 }
 
 export interface InputProps {
@@ -25,6 +26,11 @@ export interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   placeholder?: string;
+}
+
+export interface BurgerProps {
+  state: boolean;
+  onClick: () => void;
 }
 
 export interface DropDownProps {
@@ -38,4 +44,9 @@ export interface MainPageProps {
   funcSearch: (value: string) => void;
   funcPage: (value: string) => void;
   listVacancies: ArrayVacancies[];
+}
+
+export interface NaviProps {
+  state: boolean;
+  handleClose: () => void;
 }

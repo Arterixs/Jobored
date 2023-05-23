@@ -14,6 +14,7 @@ export const enum ButtonClasses {
   BTN_PAGINATION_ACTIVE = 'btn_pagination_active',
   BTN_CLOSE_WINDOW = 'btn_close-window',
   BTN_FIND = 'btn_find',
+  BTN_BURGER = 'btn_burger',
 }
 
 export const enum SvgClasses {

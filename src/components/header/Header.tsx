@@ -1,6 +1,6 @@
 import { memo } from 'react';
+import { Navigation } from 'components/navigation/Navigation';
 import { LogoWrapper } from './Logo';
-import { Nav } from '../navigation/Nav';
 import styles from './header.module.css';
 
 export const Header = memo(() => (
@@ -8,7 +8,7 @@ export const Header = memo(() => (
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <LogoWrapper />
-        <Nav />
+        <Navigation />
       </div>
     </section>
   </header>

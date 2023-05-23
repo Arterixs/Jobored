@@ -54,7 +54,7 @@ export const Pagination = ({ funcPage }: PaginationProps) => {
         onClick={() => handleControlPagination(false)}
         disabled={disabledLeft}
       >
-        <Svg id={SvgId.ARROW_NUM_Up} className={[SvgClasses.PAG_ARROW, SvgClasses.TURN_LEFT]} />
+        <Svg id={SvgId.ARROW_NUM_UP} className={[SvgClasses.PAG_ARROW, SvgClasses.TURN_LEFT]} />
       </Button>
       {btnPages.map((item, index) => {
         const numberBtn = amountBtn[index];
@@ -73,7 +73,7 @@ export const Pagination = ({ funcPage }: PaginationProps) => {
         onClick={() => handleControlPagination(true)}
         disabled={disabledRight}
       >
-        <Svg id={SvgId.ARROW_NUM_Up} className={[SvgClasses.PAG_ARROW, SvgClasses.TURN_RIGHT]} />
+        <Svg id={SvgId.ARROW_NUM_UP} className={[SvgClasses.PAG_ARROW, SvgClasses.TURN_RIGHT]} />
       </Button>
     </div>
   );

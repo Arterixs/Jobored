@@ -23,3 +23,9 @@
   max-width: 696px;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: inherit;
+  }
+}

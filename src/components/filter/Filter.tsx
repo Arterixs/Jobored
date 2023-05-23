@@ -61,7 +61,7 @@ export const Filter = memo(({ funcRequest }: FilterProps) => {
             />
             <div className={styles['wrapper-btn']}>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryFr, setSalaryFr, true)}>
-                <Svg className={SvgClasses.ARROW_NUM} id={SvgId.ARROW_NUM_Up} />
+                <Svg className={SvgClasses.ARROW_NUM} id={SvgId.ARROW_NUM_UP} />
               </Button>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryFr, setSalaryFr, false)}>
                 <Svg className={SvgClasses.ARROW_NUM} id={SvgId.ARROW_NUM_DOWN} />
@@ -79,7 +79,7 @@ export const Filter = memo(({ funcRequest }: FilterProps) => {
             />
             <div className={styles['wrapper-btn']}>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryUp, setSalaryUp, true)}>
-                <Svg className={SvgClasses.ARROW_NUM} id={SvgId.ARROW_NUM_Up} />
+                <Svg className={SvgClasses.ARROW_NUM} id={SvgId.ARROW_NUM_UP} />
               </Button>
               <Button className={ButtonClasses.BTN_ARR_NUM} onClick={() => clickNumArrow(salaryUp, setSalaryUp, false)}>
                 <Svg className={SvgClasses.ARROW_NUM} id={SvgId.ARROW_NUM_DOWN} />

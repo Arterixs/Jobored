@@ -18,3 +18,7 @@ body {
   font-family: var(--font-regular);
   color: var(--black);
 }
+
+.body-open {
+  overflow: hidden;
+}

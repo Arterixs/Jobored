@@ -2,6 +2,7 @@
   --white: #ffffff;
   --black: #232134;
   --shadow: #3636364d;
+  --shadow-burger: #363636bf;
   --btn-find: #343a40;
   --grey: #f7f7f8;
   --grey-100: #f5f5f6;
@@ -23,4 +24,8 @@
   --font-title: 'Poppins-semiBold', sans-serif;
   --font-dot: 'Poppins-regular', sans-serif;
   --font-roboto: 'Roboto-regular', sans-serif;
+
+  --index-loader: 5;
+  --index-burger: 3;
+  --index-shadow-burger: 2;
 }

@@ -192,3 +192,66 @@
 .btn_find:active {
   background-color: var(--blue-300);
 }
+
+.btn_burger {
+  width: 30px;
+  height: 30px;
+  z-index: var(--index-burger);
+  position: relative;
+  transition: all 0.3s ease 0s;
+  border: none;
+  background: transparent;
+  display: none;
+}
+
+.btn_burger:hover {
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.btn_burger::before,
+.btn_burger::after {
+  content: '';
+  left: 2px;
+  position: absolute;
+  height: 2.5px;
+  width: 90%;
+  transition: all 0.3s ease 0s;
+  background-color: var(--blue-500-main);
+  border-radius: 5px;
+}
+
+.btn_burger::before {
+  transition: all 0.3s ease;
+  top: 0;
+  height: 2.8px;
+}
+
+.btn_burger::after {
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.btn_burger_active:after,
+.btn_burger_active::before {
+  background-color: var(--blue-500-main);
+  height: 2.5px;
+}
+
+.btn_burger_active:after {
+  bottom: 50%;
+  transition: all 0.3s ease;
+  transform: rotate(45deg) translate(0.5px, 50%);
+}
+
+.btn_burger_active::before {
+  top: 50%;
+  transition: all 0.3s ease;
+  transform: rotate(-45deg) translate(0.5px, -50%);
+}
+
+@media (max-width: 768px) {
+  .btn_burger {
+    display: block;
+  }
+}
