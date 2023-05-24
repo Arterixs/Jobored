@@ -8,6 +8,7 @@
 .filter {
   padding: 20px;
   min-width: 315px;
+  width: 315px;
   height: 360px;
 }
 
@@ -44,5 +45,6 @@
 @media (max-width: 400px) {
   .filter {
     min-width: 280px;
+    width: 280px;
   }
 }
