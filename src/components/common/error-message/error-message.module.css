@@ -47,3 +47,19 @@
   height: 24px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .window {
+    top: -85px;
+  }
+}
+
+@media (max-width: 600px) {
+  .window {
+    padding-left: 20px;
+  }
+
+  .content {
+    gap: 15px;
+  }
+}
