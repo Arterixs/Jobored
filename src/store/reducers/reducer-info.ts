@@ -8,7 +8,7 @@ export const reducerInfo = (state: StateInfo, action: ActionReducerInfo) => {
     case ActionLoadInfo.SET_DIRECT_INDUSTRY:
       return { ...state, directoryIndustry: payload };
     case ActionLoadInfo.SET_LIST_VACANCIES:
-      return { ...state, listVacancies: payload };
+      return { ...state, listVacancies: payload.object, total: payload.total };
     default:
       return state;
   }

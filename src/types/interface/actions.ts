@@ -1,5 +1,5 @@
 import { ActionLoad, ActionLoadInfo } from 'types/enums/actions';
-import { ArrayVacancies, CatalogJobs } from './server';
+import { CatalogJobs, RequestVacancies } from './server';
 
 export interface ActionError {
   type: ActionLoad.ERROR_LOAD;
@@ -28,5 +28,5 @@ export interface ActionIndustry {
 
 export interface ActionVacancies {
   type: ActionLoadInfo.SET_LIST_VACANCIES;
-  payload: ArrayVacancies[];
+  payload: RequestVacancies;
 }

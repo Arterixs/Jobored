@@ -10,7 +10,6 @@ export type SvgProps = { id: string; className: SvgClasses | SvgClasses[] };
 type ChangeFavorite = { changeStar?: () => void; job?: boolean };
 
 export type SearchProps = Pick<MainPageProps, 'funcSearch'>;
-export type PaginationProps = Pick<MainPageProps, 'funcPage'>;
 export type FilterProps = { funcRequest: (value: string) => void };
 export type StarProps = Pick<CardJobProperty, 'id'> & ChangeFavorite;
 export type CardProps = CardJobProperty & ChangeFavorite;

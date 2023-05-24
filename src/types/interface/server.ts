@@ -59,3 +59,8 @@ interface VacanciesWork {
   id: number;
   title: string;
 }
+
+export interface RequestVacancies {
+  object: ArrayVacancies[];
+  total: number;
+}

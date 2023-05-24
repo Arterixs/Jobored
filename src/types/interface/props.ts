@@ -47,6 +47,12 @@ export interface MainPageProps {
   funcPage: (value: string) => void;
   funcFitler: () => void;
   listVacancies: ArrayVacancies[];
+  total: number;
+}
+
+export interface PaginationProps {
+  funcPage: (value: string) => void;
+  total: number;
 }
 
 export interface NaviProps {

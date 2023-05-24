@@ -1,3 +1,4 @@
+import { MagicNumbers } from 'types/enums/magic-numbers';
 import { LocalStorage } from 'types/enums/server';
 
 export const setIdFavorite = (id: number) => {
@@ -20,12 +21,20 @@ export const deleteIdFavorite = (id: number) => {
   }
 };
 
-export const getFavoriteParams = () => {
+export const getFavoriteParams = (page: number) => {
   const data = localStorage.getItem(LocalStorage.FAVORITE);
   if (data) {
     const arr = JSON.parse(data) as number[];
     if (arr.length) {
-      const stringParams = arr.map((item) => `&ids[]=${item}`).join('');
+      const currentPage = page * MagicNumbers.AMOUNT_CARDS_PAGE;
+      const nextPage = currentPage + MagicNumbers.AMOUNT_CARDS_PAGE;
+      const actualPages = [] as number[];
+      arr.forEach((item, index) => {
+        if (index >= currentPage && index < nextPage) {
+          actualPages.push(item);
+        }
+      });
+      const stringParams = actualPages.map((item) => `&ids[]=${item}`).join('');
       return `${stringParams}`;
     }
   }
@@ -42,4 +51,13 @@ export const checkIdFavorite = (id: number) => {
     }
   }
   return false;
+};
+
+export const getAmountFavoriteCards = () => {
+  const data = localStorage.getItem(LocalStorage.FAVORITE);
+  if (data) {
+    const arrayCards = JSON.parse(data) as number[];
+    return arrayCards.length;
+  }
+  return MagicNumbers.ZERO;
 };

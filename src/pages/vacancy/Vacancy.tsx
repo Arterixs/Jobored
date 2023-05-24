@@ -34,6 +34,7 @@ export const Vacancy = () => {
           funcPage={setPageRequest}
           funcFitler={changeStateFilter}
           listVacancies={state.listVacancies}
+          total={state.total}
         />
       </ContextInfo.Provider>
     </main>

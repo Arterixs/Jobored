@@ -9,6 +9,7 @@ export interface StateVacFilter {
 export interface StateInfo {
   directoryIndustry: CatalogJobs[];
   listVacancies: ArrayVacancies[];
+  total: number;
 }
 
 export interface StateDataRequest {

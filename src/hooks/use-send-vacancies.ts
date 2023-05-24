@@ -15,7 +15,7 @@ export const useSendVacancies = (dispatch: React.Dispatch<ActionReducerInfo>, st
       .then((result) => {
         dispatch({
           type: ActionLoadInfo.SET_LIST_VACANCIES,
-          payload: result,
+          payload: { object: result.objects, total: result.total },
         });
         dispatchServer({ type: ActionLoad.END, payload: 1 });
       })

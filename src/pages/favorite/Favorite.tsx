@@ -4,6 +4,7 @@ import { Routers } from 'types/enums/router';
 import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { CardWrapClasses } from 'types/enums/classes';
+import { getAmountFavoriteCards } from 'utils/helpers/favorite';
 import { ArrayVacancies } from 'types/interface/server';
 import { useSendFavor } from 'hooks/use-send-favor';
 import { Pagination } from 'components/pagination/Pagination';
@@ -12,13 +13,16 @@ import { TextContent } from 'types/enums/text';
 import { UseErrorContext } from 'hooks/use-loaded-context';
 import styles from './favorite.module.css';
 
-export const VacanciesPage = () => {
+export const FavoritePage = () => {
+  const amountCards = getAmountFavoriteCards();
   const [array, setArray] = useState<ArrayVacancies[]>([]);
   const [event, setEvent] = useState(false);
+  const [page, setPage] = useState(0);
   const { dispatch } = UseErrorContext();
   const changeStar = useCallback(() => setEvent(!event), [event]);
+  const changePage = useCallback((value: string) => setPage(Number(value)), []);
   const changeArray = useCallback((arr: ArrayVacancies[]) => setArray(arr), []);
-  useSendFavor(dispatch, changeArray, event);
+  useSendFavor(dispatch, changeArray, event, page);
   const isEmptyCheck = Boolean(array.length);
 
   return (
@@ -44,7 +48,7 @@ export const VacanciesPage = () => {
                 </CardWrapper>
               ))}
             </section>
-            <Pagination funcPage={() => {}} />
+            <Pagination funcPage={changePage} total={amountCards} />
           </div>
         </div>
       ) : (
