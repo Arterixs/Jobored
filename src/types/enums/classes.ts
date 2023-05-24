@@ -15,6 +15,8 @@ export const enum ButtonClasses {
   BTN_CLOSE_WINDOW = 'btn_close-window',
   BTN_FIND = 'btn_find',
   BTN_BURGER = 'btn_burger',
+  BTN_FITLER = 'btn_filter',
+  BTN_LOOP = 'btn_loop',
 }
 
 export const enum SvgClasses {
@@ -30,6 +32,7 @@ export const enum SvgClasses {
   PAG_ARROW = 'pag_arrow',
   TURN_LEFT = 'turn_left',
   TURN_RIGHT = 'turn_right',
+  FITLER = 'filter',
 }
 
 export const enum InputClasses {

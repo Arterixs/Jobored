@@ -20,3 +20,29 @@
 .job {
   min-height: 157px;
 }
+
+@media (max-width: 890px) {
+  .filter {
+    position: absolute;
+    top: 190px;
+    z-index: var(--index-fitler);
+    box-shadow: 0px 0px 15px 5px var(--blue-500-main);
+    transition: all 0.3s ease;
+  }
+
+  .filter_open {
+    left: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .filter_close {
+    left: -350px;
+    transition: all 0.3s ease;
+  }
+}
+
+@media (max-width: 400px) {
+  .filter {
+    min-width: 280px;
+  }
+}

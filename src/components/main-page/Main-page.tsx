@@ -7,16 +7,24 @@ import { Search } from 'components/common/search/Search';
 import { EmptyPage } from 'pages/empty/empty-page';
 import { TextContent } from 'types/enums/text';
 import { Pagination } from 'components/pagination/Pagination';
-import { CardWrapClasses } from 'types/enums/classes';
+import { ButtonClasses, CardWrapClasses, SvgClasses } from 'types/enums/classes';
+import { SvgId } from 'types/enums/svg';
+import { Svg } from 'components/common/svg-element/Svg';
+import { Button } from 'components/common/button/Button';
 import { MainPageProps } from 'types/interface/props';
 import styles from './main-page.module.css';
 
-export const MainPage = memo(({ funcSearch, funcPage, listVacancies }: MainPageProps) => {
+export const MainPage = memo(({ funcSearch, funcPage, funcFitler, listVacancies }: MainPageProps) => {
   const isCheckList = Boolean(listVacancies.length);
   return (
     <section className={styles.main_page}>
       <section className={styles.section}>
-        <Search funcSearch={funcSearch} />
+        <div className={styles.container}>
+          <Button className={ButtonClasses.BTN_FITLER} onClick={funcFitler}>
+            <Svg id={SvgId.FILTER} className={SvgClasses.FITLER} />
+          </Button>
+          <Search funcSearch={funcSearch} />
+        </div>
         {isCheckList ? (
           <section className={styles.section}>
             {listVacancies.map((item) => (

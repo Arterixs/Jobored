@@ -14,7 +14,9 @@ import styles from './vacancy.module.css';
 export const Vacancy = () => {
   const [state, dispatch] = useReducer(reducerInfo, stateInfo);
   const [stateSend, setState] = useState(stateVacancyPage);
+  const [stateFitler, setStateFilter] = useState(false);
   const contextValue = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const changeStateFilter = useCallback(() => setStateFilter(!stateFitler), [stateFitler]);
   const setFilterRequest = useCallback((value: string) => setState({ ...stateSend, filter: value }), [stateSend]);
   const setPageRequest = useCallback((value: string) => setState({ ...stateSend, pageBtn: value }), [stateSend]);
   const setSearchRequest = useCallback((value: string) => setState({ ...stateSend, search: value }), [stateSend]);
@@ -24,10 +26,15 @@ export const Vacancy = () => {
   return (
     <main className={styles.main}>
       <ContextInfo.Provider value={contextValue}>
-        <CardWrapper className={CardWrapClasses.FILTER}>
+        <CardWrapper className={CardWrapClasses.FILTER} state={stateFitler}>
           <Filter funcRequest={setFilterRequest} />
         </CardWrapper>
-        <MainPage funcSearch={setSearchRequest} funcPage={setPageRequest} listVacancies={state.listVacancies} />
+        <MainPage
+          funcSearch={setSearchRequest}
+          funcPage={setPageRequest}
+          funcFitler={changeStateFilter}
+          listVacancies={state.listVacancies}
+        />
       </ContextInfo.Provider>
     </main>
   );

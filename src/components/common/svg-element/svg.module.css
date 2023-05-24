@@ -26,9 +26,6 @@
 }
 
 .search {
-  position: absolute;
-  left: 12px;
-  top: 16px;
   fill: none;
   width: 16px;
   height: 16px;
@@ -70,4 +67,16 @@
   height: 30px;
   pointer-events: none;
   color: var(--blue-500-main);
+}
+
+.filter {
+  width: 40px;
+  height: 48px;
+}
+
+@media (max-width: 400px) {
+  .filter {
+    width: 34px;
+    height: 40px;
+  }
 }

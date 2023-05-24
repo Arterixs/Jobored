@@ -7,6 +7,7 @@ export interface CardWrapProps {
   children: ReactNode;
   className: CardWrapClasses;
   job?: boolean;
+  state?: boolean;
 }
 
 export interface ButtonProps {
@@ -24,6 +25,7 @@ export interface InputProps {
   className: InputClasses;
   type: TypeInput;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   value?: string;
   placeholder?: string;
 }
@@ -43,6 +45,7 @@ export interface DropDownProps {
 export interface MainPageProps {
   funcSearch: (value: string) => void;
   funcPage: (value: string) => void;
+  funcFitler: () => void;
   listVacancies: ArrayVacancies[];
 }
 

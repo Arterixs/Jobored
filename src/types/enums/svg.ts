@@ -8,4 +8,5 @@ export const enum SvgId {
   LOCATION = '#location',
   STAR = '#star',
   ERROR = '#error',
+  FILTER = '#filter',
 }

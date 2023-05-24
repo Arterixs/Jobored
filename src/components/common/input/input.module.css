@@ -54,3 +54,9 @@
   outline: none;
   caret-color: var(--blue-500-main);
 }
+
+@media (max-width: 500px) {
+  .search {
+    padding-right: 80px;
+  }
+}
