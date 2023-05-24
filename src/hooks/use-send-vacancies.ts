@@ -4,10 +4,10 @@ import { ActionLoad, ActionLoadInfo } from 'types/enums/actions';
 import { StateDataRequest } from 'types/interface/states';
 import { ActionReducerInfo } from 'types/types/actions';
 import { convertQueryParams } from 'utils/helpers/main-page';
-import { UseErrorContext } from './use-loaded-context';
+import { useErrorContext } from './use-loaded-context';
 
 export const useSendVacancies = (dispatch: React.Dispatch<ActionReducerInfo>, state: StateDataRequest) => {
-  const dispatchServer = UseErrorContext().dispatch;
+  const dispatchServer = useErrorContext().dispatch;
   useEffect(() => {
     const queryParams = convertQueryParams(state);
     dispatchServer({ type: ActionLoad.START, payload: 1 });

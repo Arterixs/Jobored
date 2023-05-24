@@ -5,7 +5,7 @@ import { CardJob } from 'components/card-job/Card-job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
 import { Routers } from 'types/enums/router';
 import { Search } from 'components/common/search/Search';
-import { EmptyPage } from 'pages/empty/empty-page';
+import { EmptyPage } from 'pages/empty/Empty-page';
 import { TextContent } from 'types/enums/text';
 import { Pagination } from 'components/pagination/Pagination';
 import { SvgId } from 'types/enums/svg';

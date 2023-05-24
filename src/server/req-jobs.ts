@@ -7,6 +7,6 @@ export const sendReqJobs = async () => {
     const response = await $api.get<CatalogJobs[]>(`${METHOD_JOB}/`);
     return response.data;
   } catch (err) {
-    throw new Error('Bad Request');
+    throw Error('Bad Request');
   }
 };

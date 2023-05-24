@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { CardJob } from 'components/card-job/Card-job';
 import { getIdVacancy } from 'utils/helpers/job';
 import { CardWrapper } from 'components/common/card-wrapper/Card-wrapper';
-import { UseErrorContext } from 'hooks/use-loaded-context';
+import { useErrorContext } from 'hooks/use-loaded-context';
 import { useSendJob } from 'hooks/use-send-job';
 import { CardWrapClasses } from 'types/enums/classes';
 import { ArrayVacancies } from 'types/interface/server';
@@ -12,7 +12,7 @@ import styles from './job.module.css';
 
 export const Job = () => {
   const [obj, setArray] = useState<ArrayVacancies>();
-  const { dispatch } = UseErrorContext();
+  const { dispatch } = useErrorContext();
   const { pathname } = useLocation();
   const idVacancy = getIdVacancy(pathname);
   useSendJob(dispatch, setArray, idVacancy);

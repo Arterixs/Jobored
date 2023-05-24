@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
+import { contextBody } from 'data/context-body';
+import { MyContext } from './context/context-api';
 import { App } from './app/App';
-import { contextBody, MyContext } from './context/context-api';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

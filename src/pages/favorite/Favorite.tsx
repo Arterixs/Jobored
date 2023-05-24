@@ -7,10 +7,10 @@ import { CardWrapClasses } from 'types/enums/classes';
 import { getAmountFavoriteCards } from 'utils/helpers/favorite';
 import { ArrayVacancies } from 'types/interface/server';
 import { useSendFavor } from 'hooks/use-send-favor';
+import { EmptyPage } from 'pages/empty/Empty-page';
 import { Pagination } from 'components/pagination/Pagination';
-import { EmptyPage } from 'pages/empty/empty-page';
 import { TextContent } from 'types/enums/text';
-import { UseErrorContext } from 'hooks/use-loaded-context';
+import { useErrorContext } from 'hooks/use-loaded-context';
 import styles from './favorite.module.css';
 
 export const FavoritePage = () => {
@@ -18,7 +18,7 @@ export const FavoritePage = () => {
   const [array, setArray] = useState<ArrayVacancies[]>([]);
   const [event, setEvent] = useState(false);
   const [page, setPage] = useState(0);
-  const { dispatch } = UseErrorContext();
+  const { dispatch } = useErrorContext();
   const changeStar = useCallback(() => setEvent(!event), [event]);
   const changePage = useCallback((value: string) => setPage(Number(value)), []);
   const changeArray = useCallback((arr: ArrayVacancies[]) => setArray(arr), []);

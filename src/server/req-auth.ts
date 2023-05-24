@@ -9,6 +9,6 @@ export const senReqAuth = async () => {
     const token = response.data.access_token;
     localStorage.setItem(LocalStorage.TOKEN, `${token}`);
   } catch (err) {
-    throw Error('Error');
+    throw Error('Bad Request');
   }
 };

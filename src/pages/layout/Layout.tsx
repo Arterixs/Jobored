@@ -1,7 +1,7 @@
 import { Loader } from 'components/loader/Loader';
 import { Outlet } from 'react-router-dom';
 import { Sprite } from 'components/common/sprite/Sprite';
-import { Footer } from 'components/footer/footer';
+import { Footer } from 'components/footer/Footer';
 import { useSendAuth } from 'hooks/use-send-auth';
 import { Header } from 'components/header/Header';
 import { useMemo, useReducer } from 'react';

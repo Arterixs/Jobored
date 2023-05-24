@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import { sendReqJobs } from 'server/req-jobs';
 import { ActionLoad, ActionLoadInfo } from 'types/enums/actions';
 import { ActionReducerInfo } from 'types/types/actions';
-import { UseErrorContext } from './use-loaded-context';
+import { useErrorContext } from './use-loaded-context';
 
 export const useSendInformation = (dispatch: React.Dispatch<ActionReducerInfo>) => {
-  const dispatchServer = UseErrorContext().dispatch;
+  const dispatchServer = useErrorContext().dispatch;
   const ref = useRef(true);
   useEffect(() => {
     if (ref.current) {
