@@ -2,6 +2,7 @@
   background-color: var(--white);
   border: 1px solid var(--grey-200);
   border-radius: 12px;
+  position: relative;
 }
 
 .filter {
@@ -13,9 +14,9 @@
 .card {
   padding: 24px;
   width: 100%;
+  position: relative;
 }
 
 .job {
   min-height: 157px;
-  position: relative;
 }

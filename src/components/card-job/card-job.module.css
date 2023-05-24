@@ -61,6 +61,7 @@
 }
 
 @media (max-width: 700px) {
+  .title,
   .title_job {
     text-align: center;
     font-size: 20px;
@@ -70,6 +71,7 @@
     justify-content: center;
   }
 
+  .wrap_description,
   .wrap_description_job {
     font-size: 16px;
     flex-direction: column;
@@ -86,6 +88,7 @@
 }
 
 @media (max-width: 600px) {
+  .title,
   .title_job {
     font-size: 18px;
   }

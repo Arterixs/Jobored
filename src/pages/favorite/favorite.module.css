@@ -35,3 +35,14 @@
   text-decoration: none;
   color: inherit;
 }
+
+@media (max-width: 1100px) {
+  .main {
+    align-items: center;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
