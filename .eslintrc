@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "import", "jsx-a11y", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      },
+      "rules": {
+        "import/no-default-export": "off",
+        "react/prefer-stateless-function": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": [1, { "html": "ignore" }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}

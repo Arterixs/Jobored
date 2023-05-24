@@ -1,0 +1,18 @@
+.span {
+  content: '';
+  left: 2px;
+  position: absolute;
+  height: 2.5px;
+  width: 90%;
+  transition: all 0.3s ease 0s;
+  background-color: var(--blue-500-main);
+  border-radius: 5px;
+  top: 50%;
+  transform: scale(1) translate(0px, -50%);
+  transition: all 0.3s ease;
+}
+
+.span_active {
+  display: none;
+  transition: all 0.3s ease;
+}

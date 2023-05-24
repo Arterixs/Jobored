@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Inter-regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inter-regular'), url('../assets/fonts/Inter-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Inter-Regular.woff') format('woff'), url('../assets/fonts/Inter-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter-medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Inter-medium'), url('../assets/fonts/Inter-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Inter-Medium.woff') format('woff'), url('../assets/fonts/Inter-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter-semiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Inter-semiBold'), url('../assets/fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Inter-SemiBold.woff') format('woff'), url('../assets/fonts/Inter-SemiBold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter-bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter-bold'), url('../assets/fonts/Inter-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Inter-Bold.woff') format('woff'), url('../assets/fonts/Inter-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-semiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins-semiBold'), url('../assets/fonts/Poppins-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Poppins-SemiBold.woff') format('woff'),
+    url('../assets/fonts/Poppins-SemiBold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins-regular'), url('../assets/fonts/Poppins-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Poppins-Regular.woff') format('woff'), url('../assets/fonts/Poppins-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto-regular'), url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Roboto-Regular.woff') format('woff'), url('../assets/fonts/Roboto-Regular.woff2') format('ttf');
+}

@@ -1,0 +1,326 @@
+.btn {
+  border: none;
+  transition: all 0.3s ease;
+  outline: none;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: var(--font-medium);
+  background-color: transparent;
+}
+
+.btn_reset {
+  width: inherit;
+  height: inherit;
+  background-color: transparent;
+  text-align: start;
+  color: var(--grey-500);
+  transition: all 0.3s ease;
+}
+
+.btn_arrow-num:hover,
+.btn_arrow-num:focus-visible,
+.btn_reset:focus-visible,
+.btn_reset:focus-visible + svg,
+.btn_reset:hover + svg,
+.btn_reset:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--blue-400);
+}
+
+.btn_arrow-num:active,
+.btn_reset:active + svg,
+.btn_reset:active {
+  transition: all 0.3s ease;
+  color: var(--blue-500-main);
+}
+
+.btn_apply {
+  text-align: center;
+  width: inherit;
+  height: 40px;
+  background-color: var(--blue-500-main);
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.btn_pagination:hover,
+.btn_pagination:focus-visible,
+.btn_search:hover,
+.btn_search:focus-visible,
+.btn_apply:focus-visible,
+.btn_apply:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--blue-400);
+}
+
+.btn_pagination:hover,
+.btn_pagination:focus-visible {
+  border: 1px solid var(--blue-400);
+}
+
+.btn_search:active,
+.btn_apply:active {
+  transition: all 0.3s ease;
+  background-color: var(--blue-600);
+}
+
+.btn_arrow-num {
+  text-align: center;
+  width: 12px;
+  height: 12px;
+  color: var(--grey-500);
+  display: flex;
+}
+
+.btn_arrow-big {
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: var(--grey-500);
+}
+
+.turn {
+  color: var(--blue-500-main);
+  transition: all 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.btn_search {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  width: 83px;
+  text-align: center;
+  height: 32px;
+  background-color: var(--blue-500-main);
+  border-radius: 8px;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.btn_pagination {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey-300);
+  line-height: 22px;
+  background-color: var(--white);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: var(--font-roboto);
+  color: var(--grey-600);
+}
+
+.btn_pagination:disabled {
+  border: 1px solid var(--grey-200);
+  color: var(--grey-200);
+  pointer-events: none;
+}
+
+.btn_pagination_active {
+  background-color: var(--blue-500-main);
+  border: 1px solid var(--blue-500-main);
+  color: var(--white);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.btn_close-window {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  transition: all 0.3s ease;
+  color: var(--blue-500-main);
+}
+
+.btn_close-window:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--blue-600);
+}
+
+.btn_star {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: baseline;
+  transition: all 0.3s ease;
+  color: var(--grey-500);
+  fill: none;
+}
+
+.btn_star:hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: var(--blue-400);
+}
+
+.btn_star-active {
+  transition: all 0.3s ease;
+  color: var(--blue-500-main);
+  fill: var(--blue-500-main);
+}
+
+.btn_find {
+  width: 164px;
+  height: 42px;
+  background-color: var(--blue-100);
+  color: var(--blue-600);
+  font-family: var(--font-semiBold);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn_find:hover,
+.btn_find:focus-visible {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--blue-200);
+}
+
+.btn_find:active {
+  background-color: var(--blue-300);
+}
+
+.btn_burger {
+  width: 30px;
+  height: 30px;
+  z-index: var(--index-burger);
+  position: relative;
+  transition: all 0.3s ease 0s;
+  border: none;
+  background: transparent;
+  display: none;
+}
+
+.btn_burger:hover {
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.btn_burger::before,
+.btn_burger::after {
+  content: '';
+  left: 2px;
+  position: absolute;
+  height: 2.5px;
+  width: 90%;
+  transition: all 0.3s ease 0s;
+  background-color: var(--blue-500-main);
+  border-radius: 5px;
+}
+
+.btn_burger::before {
+  transition: all 0.3s ease;
+  top: 0;
+  height: 2.8px;
+}
+
+.btn_burger::after {
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.btn_burger_active:after,
+.btn_burger_active::before {
+  background-color: var(--blue-500-main);
+  height: 2.5px;
+}
+
+.btn_burger_active:after {
+  bottom: 50%;
+  transition: all 0.3s ease;
+  transform: rotate(45deg) translate(0.5px, 50%);
+}
+
+.btn_burger_active::before {
+  top: 50%;
+  transition: all 0.3s ease;
+  transform: rotate(-45deg) translate(0.5px, -50%);
+}
+
+.btn_filter {
+  width: 50px;
+  height: 40px;
+  fill: var(--blue-500-main);
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.btn_filter:hover {
+  cursor: pointer;
+  fill: var(--blue-400);
+  transition: all 0.3s ease;
+}
+
+.btn_filter:active {
+  fill: var(--blue-600);
+  transition: all 0.3s ease;
+}
+
+.btn_loop {
+  position: absolute;
+  left: 12px;
+  top: 16px;
+  width: 20px;
+  height: 21px;
+  display: flex;
+  align-items: flex-start;
+  color: var(--grey-500);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.btn_loop:hover {
+  cursor: pointer;
+  color: var(--grey-600);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 890px) {
+  .btn_filter {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn_burger {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .btn_star {
+    position: absolute;
+    bottom: 23px;
+    right: 23px;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn_search {
+    display: none;
+  }
+
+  .btn_loop {
+    pointer-events: all;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn_filter {
+    width: 40px;
+  }
+}

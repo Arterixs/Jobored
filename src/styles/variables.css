@@ -1,0 +1,32 @@
+:root {
+  --white: #ffffff;
+  --black: #232134;
+  --shadow: #3636364d;
+  --shadow-burger: #363636bf;
+  --btn-find: #343a40;
+  --grey: #f7f7f8;
+  --grey-100: #f5f5f6;
+  --grey-200: #eaebed;
+  --grey-300: #d5d6dc;
+  --grey-500: #acadb9;
+  --grey-600: #7b7c88;
+  --blue-100: #deecff;
+  --blue-200: #c9e0ff;
+  --blue-300: #b7d6ff;
+  --blue-400: #92c1ff;
+  --blue-500-main: #5e96fc;
+  --blue-600: #3b7cd3;
+
+  --font-regular: 'Inter-regular', sans-serif;
+  --font-medium: 'Inter-medium', sans-serif;
+  --font-semiBold: 'Inter-semiBold', sans-serif;
+  --font-bold: 'Inter-bold', sans-serif;
+  --font-title: 'Poppins-semiBold', sans-serif;
+  --font-dot: 'Poppins-regular', sans-serif;
+  --font-roboto: 'Roboto-regular', sans-serif;
+
+  --index-loader: 5;
+  --index-burger: 3;
+  --index-shadow-burger: 2;
+  --index-fitler: 1;
+}
