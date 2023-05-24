@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from 'react';
+import { useState } from 'react';
 import { ButtonClasses, InputClasses, SvgClasses } from 'types/enums/classes';
 import { SvgId } from 'types/enums/svg';
 import { InputText, TextButton } from 'types/enums/text';

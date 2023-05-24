@@ -11,7 +11,7 @@ export const ErrorMessage = ({ state, handleClick }: { state: boolean; handleCli
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <Svg id={SvgId.ERROR} className={SvgClasses.ERROR_WIND} />
-        <p className={styles.text}>{ServerCodeResponse.ERROR_TEXT}</p>
+        <p>{ServerCodeResponse.ERROR_TEXT}</p>
       </div>
       <Button className={ButtonClasses.BTN_CLOSE_WINDOW} onClick={handleClick}>
         <Svg id={SvgId.CLOSE} className={SvgClasses.CLOSE_WINDOW} />
