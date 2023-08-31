@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arterixs.github.io/Jobored-Paralect/",
+  "homepage": "https://arterixs.github.io/Jobored/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
