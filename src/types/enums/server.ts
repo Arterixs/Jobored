@@ -1,10 +1,10 @@
-export const enum UserAuthData {
-  LOGIN = 'login=sergei.stralenia@gmail.com',
-  PASSWORD = 'password=paralect123',
-  ID = 'client_id=2356',
-  SECRET = 'client_secret=v3.r.137440105.ffdbab114f92b821eac4e21f485343924a773131.06c3bdbb8446aeb91c35b80c42ff69eb9c457948',
-  HR = 'hr=0',
-}
+export const UserAuthData = {
+  LOGIN: process.env.REACT_APP_LOGIN || '',
+  PASSWORD: process.env.REACT_APP_PASSWORD || '',
+  ID: process.env.REACT_APP_ID || '',
+  SECRET: process.env.REACT_APP_SECRET || '',
+  HR: process.env.REACT_APP_HR || 'hr=0',
+} as const;
 
 export const enum LocalStorage {
   TOKEN = 'tokenAcces',
